@@ -29,7 +29,7 @@ class TestAskRequest:
         assert req.top_k == 5
         assert req.lang is None
         assert req.use_cache is True
-        assert req.allow_generative is True
+        assert req.allow_generative is False
 
     def test_min_query_length(self):
         with pytest.raises(Exception):
