@@ -14,6 +14,8 @@
 
 [Features](#-features) · [Architecture](#-architecture) · [Performance](#-performance) · [Quickstart](#-quickstart) · [API](#-api-reference) · [Guardrails](#-guardrails)
 
+<img src="docs/ui.png" alt="VOICE RAG interface" width="100%">
+
 </div>
 
 ---
@@ -40,6 +42,14 @@ Ask something the corpus *does* cover — in English, Hindi, or Gujarati — and
 ---
 
 ## Features
+
+<div align="center">
+
+<img src="docs/demo.gif" alt="VOICE RAG in action — hold to speak, watch the pipeline run" width="85%">
+
+<sub><b>Hold to speak → transcribe → retrieve → grounded answer, with the full evidence chain.</b></sub>
+
+</div>
 
 - **Voice-native UX** — hold <kbd>Space</kbd> (or the mic button) to speak; audio is captured, encoded to 16 kHz mono WAV in-browser, transcribed by Sarvam, and answered end-to-end.
 - **Knows when not to answer** — relevance floors calibrated from measured score distributions refuse off-corpus questions instead of fabricating answers.
