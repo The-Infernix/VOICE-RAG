@@ -68,30 +68,108 @@ Ask something the corpus *does* cover — in English, Hindi, or Gujarati — and
 
 ```mermaid
 flowchart TB
-    subgraph CLIENT["Browser SPA"]
-        MIC["Mic / Text input"]
-        WAV["WAV encoder<br/>16 kHz mono PCM"]
-        UI["Evidence drawer · Latency modal<br/>History · Why-this-answer"]
+
+    %% =========================
+    %% CLIENT
+    %% =========================
+    subgraph CLIENT["01 · USER INTERFACE"]
+        direction LR
+        MIC["🎙 Voice Input"]
+        TXT["⌨ Text Input"]
+        WAV["16 kHz Mono PCM<br/>Audio Encoder"]
+        UI["Evidence · History<br/>Why This Answer · Latency"]
+        
+        MIC --> WAV
     end
 
-    subgraph PIPELINE["FastAPI Pipeline"]
-        STT["Sarvam saaras:v3<br/>Speech-to-Text"]
-        IG["Input Guard<br/>injection · unsafe · length"]
-        EMB["E5 Query Embedder<br/>multilingual-e5-small"]
-        RET["Vector Search<br/>30k × 384-dim NumPy"]
-        RG["Relevance Guard<br/>per-language floors"]
-        GEN["Extractive Generator<br/>(LLM opt-in)"]
-        GG["Grounding Guard<br/>overlap → embedding"]
+    %% =========================
+    %% QUERY UNDERSTANDING
+    %% =========================
+    subgraph UNDERSTAND["02 · QUERY UNDERSTANDING"]
+        STT["Sarvam Saaras v3<br/>Speech-to-Text"]
+        IG{"Input Guard<br/>Injection · Unsafe · Length"}
+        EMB["Multilingual E5-small<br/>Query Embedding"]
     end
 
-    MIC --> WAV --> STT --> IG
-    MIC -- "text query" --> IG
-    IG --> EMB --> RET --> RG
-    RG -- "pass" --> GEN --> GG
-    RG -- "refuse" --> OUT["Refusal response"]
-    GG --> RESP["Answer + citations<br/>+ stage traces"]
-    RESP --> UI
-    OUT --> UI
+    %% =========================
+    %% RETRIEVAL
+    %% =========================
+    subgraph RETRIEVAL["03 · KNOWLEDGE RETRIEVAL"]
+        VS["MSMARCO-XI Knowledge Base<br/>30K Passages · 384-dim Vectors"]
+        SEARCH["Semantic Vector Search<br/>NumPy Index"]
+        RG{"Relevance Guard<br/>Language-aware Thresholds"}
+    end
+
+    %% =========================
+    %% GENERATION
+    %% =========================
+    subgraph GENERATION["04 · GROUNDED GENERATION"]
+        GEN["Extractive Answer Generator<br/>LLM Generation · Optional"]
+        GG{"Grounding Guard<br/>Lexical + Embedding Verification"}
+    end
+
+    %% =========================
+    %% OUTPUT
+    %% =========================
+    subgraph OUTPUT["05 · VERIFIED RESPONSE"]
+        ANS["Answer"]
+        EVID["Retrieved Evidence<br/>Citations + Relevance"]
+        TRACE["Pipeline Trace<br/>Latency + Stage Results"]
+    end
+
+    %% =========================
+    %% INPUT FLOWS
+    %% =========================
+    WAV --> STT
+    TXT --> IG
+    STT --> IG
+
+    %% =========================
+    %% QUERY FLOW
+    %% =========================
+    IG -->|Pass| EMB
+    IG -->|Reject| REF1["Safe Refusal"]
+
+    EMB --> SEARCH
+    VS --> SEARCH
+    SEARCH --> RG
+
+    RG -->|Relevant| GEN
+    RG -->|Insufficient Evidence| REF2["Evidence-based Refusal"]
+
+    GEN --> GG
+
+    GG -->|Grounded| ANS
+    GG -->|Unsupported| REF3["Grounding Refusal"]
+
+    %% =========================
+    %% RESPONSE
+    %% =========================
+    ANS --> EVID
+    ANS --> TRACE
+    EVID --> UI
+    TRACE --> UI
+
+    REF1 --> UI
+    REF2 --> UI
+    REF3 --> UI
+
+    %% =========================
+    %% STYLES
+    %% =========================
+    classDef client fill:#111827,stroke:#60a5fa,color:#fff,stroke-width:2px
+    classDef process fill:#101827,stroke:#34d399,color:#fff,stroke-width:2px
+    classDef guard fill:#18120b,stroke:#f59e0b,color:#fff,stroke-width:2px
+    classDef knowledge fill:#111827,stroke:#a78bfa,color:#fff,stroke-width:2px
+    classDef output fill:#0f172a,stroke:#22d3ee,color:#fff,stroke-width:2px
+    classDef refusal fill:#1f1111,stroke:#ef4444,color:#fff,stroke-width:1.5px
+
+    class MIC,TXT,WAV,UI client
+    class STT,EMB,GEN,SEARCH process
+    class IG,RG,GG guard
+    class VS knowledge
+    class ANS,EVID,TRACE output
+    class REF1,REF2,REF3 refusal
 ```
 
 ### Stage-by-stage cost (measured medians, n = 1500)
