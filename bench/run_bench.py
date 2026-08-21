@@ -124,7 +124,7 @@ def run_benchmark(
         "by_method": dict(Counter(r["method"] for r in results)),
     }
 
-    for lang in ["en", "hi", "gu"]:
+    for lang in ["en", "hi", "gu", "te"]:
         lang_lats = [r["core_ms"] for r in results if r["language"] == lang]
         if lang_lats:
             summary["by_language"][lang] = {

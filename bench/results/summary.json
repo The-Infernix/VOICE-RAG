@@ -1,61 +1,69 @@
 {
-  "queries_tested": 1500,
+  "queries_tested": 2000,
   "core_pipeline": {
-    "p50_ms": 48.23,
-    "p70_ms": 51.5,
-    "p90_ms": 56.09,
-    "p95_ms": 59.36,
-    "p100_ms": 76.69,
-    "mean_ms": 48.9,
-    "std_ms": 5.89
+    "p50_ms": 55.75,
+    "p70_ms": 61.06,
+    "p90_ms": 69.37,
+    "p95_ms": 74.09,
+    "p100_ms": 273.22,
+    "mean_ms": 57.16,
+    "std_ms": 11.13
   },
   "total_e2e": {
-    "p50_ms": 48.3,
-    "p70_ms": 51.55,
-    "p100_ms": 76.77,
-    "mean_ms": 48.97
+    "p50_ms": 55.83,
+    "p70_ms": 61.17,
+    "p100_ms": 273.28,
+    "mean_ms": 57.24
   },
   "component_breakdown": {
-    "embed_p50_ms": 20.68,
-    "retrieve_p50_ms": 27.04,
-    "answer_p50_ms": 0.08,
+    "embed_p50_ms": 23.67,
+    "retrieve_p50_ms": 30.74,
+    "answer_p50_ms": 0.09,
     "guard_input_p50_ms": 0.02,
     "guard_relevance_p50_ms": 0.01,
-    "guard_grounding_p50_ms": 0.16
+    "guard_grounding_p50_ms": 0.17
   },
   "within_200ms": "100.0%",
   "by_language": {
     "en": {
       "count": 500,
-      "p50_ms": 47.47,
-      "p70_ms": 50.15,
-      "p100_ms": 69.23,
-      "mean_ms": 47.76,
+      "p50_ms": 54.93,
+      "p70_ms": 60.29,
+      "p100_ms": 100.81,
+      "mean_ms": 56.08,
       "within_200ms": "100.0%"
     },
     "hi": {
       "count": 500,
-      "p50_ms": 48.16,
-      "p70_ms": 51.25,
-      "p100_ms": 76.69,
-      "mean_ms": 48.72,
-      "within_200ms": "100.0%"
+      "p50_ms": 55.98,
+      "p70_ms": 60.48,
+      "p100_ms": 273.22,
+      "mean_ms": 57.46,
+      "within_200ms": "99.8%"
     },
     "gu": {
       "count": 500,
-      "p50_ms": 49.68,
-      "p70_ms": 52.98,
-      "p100_ms": 75.88,
-      "mean_ms": 50.21,
+      "p50_ms": 56.74,
+      "p70_ms": 62.18,
+      "p100_ms": 178.45,
+      "mean_ms": 58.43,
+      "within_200ms": "100.0%"
+    },
+    "te": {
+      "count": 500,
+      "p50_ms": 55.25,
+      "p70_ms": 61.17,
+      "p100_ms": 109.54,
+      "mean_ms": 56.68,
       "within_200ms": "100.0%"
     }
   },
   "by_status": {
-    "success": 1421,
-    "refused": 79
+    "success": 1893,
+    "refused": 107
   },
   "by_method": {
-    "extractive": 1421,
-    "none": 79
+    "extractive": 1893,
+    "none": 107
   }
 }

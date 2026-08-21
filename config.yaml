@@ -56,6 +56,7 @@ guardrails:
       en: 0.84
       hi: 0.85
       gu: 0.84
+      te: 0.84
     low_confidence_band: 0.03
   grounding:
     token_overlap_threshold: 0.15

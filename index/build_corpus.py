@@ -10,6 +10,7 @@ from tqdm import tqdm
 LANG_MAP = {
     "hi": "hin_Deva",
     "gu": "guj_Gujr",
+    "te": "tel_Telu",
 }
 
 DATA_DIR = Path(__file__).parent.parent / "data"

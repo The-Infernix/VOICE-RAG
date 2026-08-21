@@ -1498,3 +1498,503 @@
 {"query": "क्लॉकस्प्रिंग क्या है", "language": "hi", "query_type": "DESCRIPTION", "eng_query": "what is clockspring", "query_id": 1058470}
 {"query": "बादल क्या होते हैं जिनसे बने होते हैं", "language": "hi", "query_type": "DESCRIPTION", "eng_query": "what is clouds made up of", "query_id": 1058469}
 {"query": "क्लोवरफील्ड क्या है", "language": "hi", "query_type": "DESCRIPTION", "eng_query": "what is cloverfield", "query_id": 1058467}
+{"query": "కార్పొరేషన్ అంటే ఏమిటి?", "language": "te", "query_type": "DESCRIPTION", "eng_query": ". what is a corporation?", "query_id": 1102432}
+{"query": "రాచెల్ కార్సన్ ఎందుకు సహించాల్సిన బాధ్యతను వ్రాశారు", "language": "te", "query_type": "DESCRIPTION", "eng_query": "why did rachel carson write an obligation to endure", "query_id": 1102431}
+{"query": "పొటాషియం తక్కువగా ఉండే ఆహారాల పట్టిక.", "language": "te", "query_type": "ENTITY", "eng_query": "chart for foods low in potassium.", "query_id": 90836}
+{"query": "సరుకు నౌక యొక్క దిగువ భాగం", "language": "te", "query_type": "DESCRIPTION", "eng_query": "bottom front of a cargo ship", "query_id": 55665}
+{"query": "నిజాయితీ లేదా సమగ్రత నిర్వచనం", "language": "te", "query_type": "DESCRIPTION", "eng_query": "honesty or integrity definition", "query_id": 205107}
+{"query": "లింకన్ నేలో బారోమెట్రిక్ పీడనం ఇప్పుడు ఎంత?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "what is barometric pressure in lincoln ne now?", "query_id": 1060386}
+{"query": "స్ట్రతర్స్ సిటీ స్కూల్ జిల్లా రాష్ట్ర సంఖ్య", "language": "te", "query_type": "NUMERIC", "eng_query": "struthers city school district state number", "query_id": 1090356}
+{"query": "వైద్య మారిజువానా మైట్రోక్స్‌తో సహాయపడుతుందా?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "does medical marijuana help with ptsd", "query_id": 168868}
+{"query": "ఫ్రాంక్ గిఫోర్డ్ ఎంత మంది మహిళలను వివాహం చేసుకున్నాడు", "language": "te", "query_type": "NUMERIC", "eng_query": "how many women did frank gifford marry", "query_id": 300122}
+{"query": "ప్రస్తుతం ట్రంప్ పరిపాలనలో ఎన్ని దర్యాప్తులు జరుగుతున్నాయి", "language": "te", "query_type": "NUMERIC", "eng_query": "how many ongoing trump administration investigations", "query_id": 290643}
+{"query": "వావ్‌లో అనుచరులను ఎలా సేకరించాలో మార్గదర్శి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "guide to how to collect followers on wow", "query_id": 197590}
+{"query": "జేల్స్ ఎంతకాలం విశ్రాంతి తీసుకుంటారు", "language": "te", "query_type": "NUMERIC", "eng_query": "how long is zales layaway", "query_id": 265552}
+{"query": "కాలుష్యం మానవ జనాభాను ఎలా పెంచుతుంది", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how does pollution increase human population", "query_id": 227261}
+{"query": "ఎన్‌హెచ్‌ఎల్ ప్లేఆఫ్ సీడింగ్ ఎలా పనిచేస్తుంది", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how does nhl playoff seeding work", "query_id": 227029}
+{"query": "మురికి వల్ల వలయజ్జి వస్తుందా?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "does filth cause ringworm?", "query_id": 166290}
+{"query": "కిరీటాన్ని తిరిగి అమర్చడానికి ఎంత ఖర్చవుతుంది", "language": "te", "query_type": "NUMERIC", "eng_query": "how much does it cost to recement a crown", "query_id": 316415}
+{"query": "బ్యారెల్ ఒ స్లైమ్ అంటే ఏమిటి?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "what is barrel o slime?", "query_id": 1060370}
+{"query": "గద్దలు ఎంత వేగంగా ప్రయాణిస్తాయో", "language": "te", "query_type": "NUMERIC", "eng_query": "how fast does an eagle travel", "query_id": 233826}
+{"query": "స్టబ్‌హబ్ టోల్ ఉచిత నంబర్", "language": "te", "query_type": "NUMERIC", "eng_query": "stubhub toll free number", "query_id": 1090355}
+{"query": "సోలార్ సిటీ ప్యానెళ్ళు ఎన్ని కేడబ్ల్యూ ఉత్పత్తి చేస్తాయి", "language": "te", "query_type": "NUMERIC", "eng_query": "how many kw do solar city panels produce", "query_id": 287284}
+{"query": "మొదటి డిఫెన్స్ నాసికా ఫిల్టర్ అమ్మకాల సంఖ్య", "language": "te", "query_type": "NUMERIC", "eng_query": "first defense nasal filter sales numbers", "query_id": 187378}
+{"query": "విండోస్ 8లో క్లియర్ డెస్క్‌టాప్ ఐకాన్‌ను ఎలా పొందాలి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how to get clear desktop icon on windows 8", "query_id": 361332}
+{"query": "డెల్టా బెంగళూరుకు ఎలా చేరుకుంటుంది", "language": "te", "query_type": "DESCRIPTION", "eng_query": "does delta fly to bangalore", "query_id": 165349}
+{"query": "కంటాలూప్ పండుకు ఎంత సమయం పడుతుంది", "language": "te", "query_type": "NUMERIC", "eng_query": "how long for cantaloupe to mature", "query_id": 260880}
+{"query": "పరీక్షా పైపుతో కన్వర్టర్‌ను భర్తీ చేయడానికి ఖర్చు", "language": "te", "query_type": "NUMERIC", "eng_query": "cost to replace converter with test pipe", "query_id": 110842}
+{"query": "నిర్వచనం అనేది అనుమానాస్పదంగా", "language": "te", "query_type": "DESCRIPTION", "eng_query": "defination arbitrary", "query_id": 116898}
+{"query": "స్నాతకోత్సాహం డిగ్రీలకు సమయం ఎలా లెక్కించబడుతుంది", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how is time to degree calculated graduate degrees", "query_id": 237853}
+{"query": "బార్టర్ సిస్టమ్ మరియు దాని సమస్యలు ఏమిటి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "what is barter system and its problems", "query_id": 1060361}
+{"query": "రాబ్లాక్స్‌లో పవర్ రేంజర్ ఈవెంట్ ఉందా?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "did roblox have a power ranger event", "query_id": 144943}
+{"query": "వాతావరణ వాతావరణ శాస్త్ర అధ్యయనం", "language": "te", "query_type": "DESCRIPTION", "eng_query": "study of climate weather", "query_id": 1090353}
+{"query": "నూనెతో నింపిన మూలికా మిశ్రమాన్ని ఎలా తయారు చేయాలి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how to make an oil infused herbal infusion", "query_id": 368321}
+{"query": "సమాజశాస్త్ర నిర్వచన సంస్కృతి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "culture of sociology definition", "query_id": 113570}
+{"query": "రాడికల్ నెక్‌ని నిర్వచించండి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "define radical neck", "query_id": 126172}
+{"query": "సగం కప్పు ఎన్ని ఔన్సులు", "language": "te", "query_type": "NUMERIC", "eng_query": "half cup how many ounces", "query_id": 198064}
+{"query": "పని దినాన్ని నిర్వచించండి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "define workday", "query_id": 129220}
+{"query": "ఎంత ఖర్చు అవుతుంది యూనిక్స్ గేమ్స్‌కి?", "language": "te", "query_type": "NUMERIC", "eng_query": "how much xbox games cost", "query_id": 331047}
+{"query": "సంతకం చేసిన నిబంధనను రద్దు చేయవచ్చా?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "can a signed stipulation be overturned", "query_id": 63220}
+{"query": "గాజు ఫలకం పగలబడటాన్ని ఎలా సరిచేయవచ్చు", "language": "te", "query_type": "DESCRIPTION", "eng_query": "can stress crack on glass pane be remedied", "query_id": 74039}
+{"query": "జన్యువులో ఏది మూలం", "language": "te", "query_type": "DESCRIPTION", "eng_query": "what is basal in dna", "query_id": 1060359}
+{"query": "బోనివా ఎంత ప్రభావవంతంగా ఉంటుంది", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how effective is boniva", "query_id": 229231}
+{"query": "మీరు ఎంతసేపు కార్బ్ సైకిల్ తొక్కాలి", "language": "te", "query_type": "NUMERIC", "eng_query": "how long should you carb cycle", "query_id": 267380}
+{"query": "స్టై కారణంగా", "language": "te", "query_type": "DESCRIPTION", "eng_query": "sty causes", "query_id": 1090352}
+{"query": "ఎర్రబడిన కాల్చిన తరువాత అత్యధిక రికార్డు ఉష్ణోగ్రత", "language": "te", "query_type": "NUMERIC", "eng_query": "highest record temperature for redding ca", "query_id": 202891}
+{"query": "ఇద్దరు సోదరీమణుల కోర్టు బ్రంచ్ ధర", "language": "te", "query_type": "NUMERIC", "eng_query": "court of two sisters brunch price", "query_id": 112025}
+{"query": "మాట్ లాయర్ సంవత్సరానికి ఎంత సంపాదిస్తాడు", "language": "te", "query_type": "NUMERIC", "eng_query": "how much does matt lauer make a year", "query_id": 317450}
+{"query": "కాలిఫోర్నియా దేశీయ హింస విధానాలు", "language": "te", "query_type": "DESCRIPTION", "eng_query": "california domestic violence leave laws", "query_id": 58871}
+{"query": "ఎక్సెల్ షీట్‌ను ఎలా ప్రింట్ చేయాలి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how to print an excel sheet", "query_id": 373460}
+{"query": "డెత్ హెడ్ యూనిట్స్ నిర్వచనం", "language": "te", "query_type": "DESCRIPTION", "eng_query": "death head units definition", "query_id": 116095}
+{"query": "మొక్కజొన్న పిండి మరియు మొక్కజొన్న పిండి ఒకటే.", "language": "te", "query_type": "DESCRIPTION", "eng_query": "are corn meal and corn flour the same", "query_id": 21860}
+{"query": "ఏది ప్రాథమికమైనది? యూని", "language": "te", "query_type": "DESCRIPTION", "eng_query": "what is basic? uni", "query_id": 1060348}
+{"query": "మూలకాల యొక్క ఎంట్రోపీ", "language": "te", "query_type": "DESCRIPTION", "eng_query": "entropy of elements", "query_id": 180855}
+{"query": "రుచికరమైన ఎర్ర యాపిల్స్ మంచి యాపిల్ సాస్ చేస్తాయా?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "do red delicious apples make good applesauce", "query_id": 158720}
+{"query": "స్టాంప్ కవర్ ఎంత బరువు ఉంటుంది", "language": "te", "query_type": "NUMERIC", "eng_query": "how much weight does a stamp cover", "query_id": 330463}
+{"query": "పెద్దలలో బోర్డర్‌లైన్ వ్యక్తిత్వ రుగ్మత లక్షణాలు స్థానభ్రంశం", "language": "te", "query_type": "ENTITY", "eng_query": "borderline personality disorder symptoms in adults displacement", "query_id": 1090350}
+{"query": "విటమిన్ డికి సహాయపడే ఆహారాలు", "language": "te", "query_type": "ENTITY", "eng_query": "foods to help vitamin d", "query_id": 190327}
+{"query": "కరేబియన్‌లో డిసెంబర్‌లో సగటు ఉష్ణోగ్రత", "language": "te", "query_type": "NUMERIC", "eng_query": "average temp in the caribbean december", "query_id": 44760}
+{"query": "మొక్కజొన్న చెవిని ఎంతసేపు మైక్రోవేవ్ చేయాలి?", "language": "te", "query_type": "NUMERIC", "eng_query": "how long to microwave an ear of corn?", "query_id": 271597}
+{"query": "ఆస్ట్రేలియా ఓపెనింగ్ గంటలు", "language": "te", "query_type": "NUMERIC", "eng_query": "aldi australia opening hours", "query_id": 15344}
+{"query": "చికాగో నుండి రోనాల్డ్ రీగన్ విమానాశ్రయానికి విమానాలు", "language": "te", "query_type": "DESCRIPTION", "eng_query": "flights from chicago to ronald reagan airport", "query_id": 187928}
+{"query": "నిర్వచన స్థానిక డిస్క్", "language": "te", "query_type": "DESCRIPTION", "eng_query": "definition local disk", "query_id": 131336}
+{"query": "బ్యాట్‌మాన్ మాన్షన్ పేరు ఏంటి?", "language": "te", "query_type": "ENTITY", "eng_query": "what is batman mansion name", "query_id": 1060343}
+{"query": "వైఫై టాబ్లెట్లు ఎలా పనిచేస్తాయి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how do wifi tablets work", "query_id": 220865}
+{"query": "రోమన్ అట్‌వుడ్ ఎంత పురాతనమైనది", "language": "te", "query_type": "NUMERIC", "eng_query": "how old is roman atwood", "query_id": 336352}
+{"query": "భుజం కొలుకునే సమయం ఎంత", "language": "te", "query_type": "NUMERIC", "eng_query": "how long is shoulder recovery", "query_id": 264507}
+{"query": "భారతీయులు అన్నం తింటారా?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "do indians eat rice", "query_id": 1101287}
+{"query": "సబ్ స్లాబ్ నిర్వచనం", "language": "te", "query_type": "DESCRIPTION", "eng_query": "sub slab definition", "query_id": 1090349}
+{"query": "ఆస్ట్ మ్బా", "language": "te", "query_type": "DESCRIPTION", "eng_query": "aast mba", "query_id": 9671}
+{"query": "లాన్కాస్టర్ పా నుండి ఫిలడెల్ఫియా ఎంత దూరంలో ఉంది", "language": "te", "query_type": "NUMERIC", "eng_query": "how far is philadelphia from lancaster pa", "query_id": 232017}
+{"query": "కాలిఫోర్నియా మత్తుమందు చట్టాలు", "language": "te", "query_type": "DESCRIPTION", "eng_query": "california narcotic laws", "query_id": 58928}
+{"query": "కొన్ని సూపర్‌వైజర్‌లు తమ వేర్‌హౌస్‌లో ఉంచే వస్తువులకు ఎంత చెల్లిస్తారు", "language": "te", "query_type": "NUMERIC", "eng_query": "how much supervisor pay rate for cvs warehouse", "query_id": 328321}
+{"query": "చిన్న దోసకాయలో కెలోరీలు", "language": "te", "query_type": "NUMERIC", "eng_query": "calories in a small cucumber", "query_id": 59804}
+{"query": "బ్యాటరీ ఎంతసేపు ఉంటుంది", "language": "te", "query_type": "DESCRIPTION", "eng_query": "what is battery life f", "query_id": 1060342}
+{"query": "సిట్రిక్స్ జెనాప్ సర్వర్‌కు కనెక్ట్ కాలేరు.", "language": "te", "query_type": "DESCRIPTION", "eng_query": "cannot connect to citrix xenapp server", "query_id": 81945}
+{"query": "xcom 2 ను ఎలా సజావుగా నడపాలి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how to make xcom 2 run smoother", "query_id": 370050}
+{"query": "మైరా వేసవికాలం ఎంత పాతదో", "language": "te", "query_type": "NUMERIC", "eng_query": "how old is myra summers", "query_id": 336062}
+{"query": "కర్బ్ ఈవెంట్ సెంటర్", "language": "te", "query_type": "DESCRIPTION", "eng_query": "curb event center", "query_id": 113649}
+{"query": "నిర్వహణ సామర్థ్యం:", "language": "te", "query_type": "DESCRIPTION", "eng_query": "define: throughput", "query_id": 129807}
+{"query": "సుబారు హెడ్ గాస్కెట్ లక్షణాలు", "language": "te", "query_type": "ENTITY", "eng_query": "subaru head gasket symptoms", "query_id": 1090347}
+{"query": "స్కాట్స్‌డేల్ రీసైక్లింగ్ షెడ్యూల్ నగరం", "language": "te", "query_type": "LOCATION", "eng_query": "city of scottsdale recycling schedule", "query_id": 92849}
+{"query": "జపనీస్ పోకీమాన్ కొలోసియం సెలెబి ప్రకాశవంతంగా ఉండాలి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "can japanese pokemon colosseum celebi be shiny", "query_id": 70489}
+{"query": "ఫెలనీ ఛార్జీల నిర్వచనం", "language": "te", "query_type": "DESCRIPTION", "eng_query": "definition of felony charges", "query_id": 134646}
+{"query": "అధిక టిఎస్ స్థాయి ప్రతికూల గర్భధారణ పరీక్షకు కారణమవుతుందా?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "can a higher tsh level cause a negative pregnancy test", "query_id": 62459}
+{"query": "గాలంటైన్ నిర్వచనం", "language": "te", "query_type": "DESCRIPTION", "eng_query": "galantine definition", "query_id": 1100338}
+{"query": "రద్దు చేయబడిన చెక్ నిర్వచనం", "language": "te", "query_type": "DESCRIPTION", "eng_query": "canceled check definition", "query_id": 81586}
+{"query": "నోటిలోకి మింగేటప్పుడు ఛాతీ నొప్పి కుడి వైపు పైభాగంలో ఏదో చిక్కుకున్నట్లు అనిపిస్తుంది.", "language": "te", "query_type": "DESCRIPTION", "eng_query": "chest pain upper right side feels like something is stuck there when i swallow", "query_id": 91452}
+{"query": "ఫోరెన్సిక్ ఎవిడెన్స్ టెక్నోలాజిస్ట్ స్కూలింగ్", "language": "te", "query_type": "DESCRIPTION", "eng_query": "forensic evidence technician schooling", "query_id": 190844}
+{"query": "సస్సీ నీరు ఎంత ప్రభావవంతంగా ఉంటుంది", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how effective are sassy water", "query_id": 229215}
+{"query": "మీ చెకింగ్ ఖాతా మీ క్రెడిట్ స్కోరును ఎలా ప్రభావితం చేస్తుంది", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how can your checking account affect your credit score", "query_id": 211441}
+{"query": "ప్రవహించే మరుగుదొడ్డి వ్యర్థాలతో ఎంత నీరు కడిగివేయవచ్చు.", "language": "te", "query_type": "NUMERIC", "eng_query": "how much water can a running toilet waste", "query_id": 330054}
+{"query": "సబ్‌కాండ్రల్ ఫైబ్రోసిస్టిక్ అంటే", "language": "te", "query_type": "DESCRIPTION", "eng_query": "subchondral fibrocystic meaning", "query_id": 1090346}
+{"query": "ఐఆర్ఎస్ రికార్డులను ఎంతకాలం ఉంచుతారు", "language": "te", "query_type": "NUMERIC", "eng_query": "how long keep IRS records", "query_id": 265717}
+{"query": "పూర్తి సెట్ దంతవైద్యుడు ఎంత రేడియేషన్ చేస్తాడు", "language": "te", "query_type": "NUMERIC", "eng_query": "how much radiation full set dentist", "query_id": 326813}
+{"query": "ఫెడరల్ కాంట్రాక్టర్ నిర్వచనం", "language": "te", "query_type": "DESCRIPTION", "eng_query": "federal contractor definition", "query_id": 185914}
+{"query": "బట్టి అంటే ఏమిటి?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "what is batti", "query_id": 1060341}
+{"query": "పోర్టబుల్ కలర్ టీవీ వీడియోకాన్ ధర", "language": "te", "query_type": "NUMERIC", "eng_query": "cost of portable color tv videocon", "query_id": 106218}
+{"query": "దైనందిన కార్యకలాపాలను నిర్వచించండి.", "language": "te", "query_type": "DESCRIPTION", "eng_query": "define routine activity", "query_id": 126636}
+{"query": "ప్రపంచంలోనే అతిపెద్ద ఒరిగామి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "biggest origami in the world", "query_id": 53335}
+{"query": "శ్రేణిలో కణాన్ని నిర్వచించడం", "language": "te", "query_type": "DESCRIPTION", "eng_query": "defining cell in array", "query_id": 129959}
+{"query": "మీరు చిల్ వైన్ చేస్తారా?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "do you chill wine", "query_id": 160108}
+{"query": "ఫ్రెంచ్ అనువాదం ఎక్కడ ఉంది", "language": "te", "query_type": "ENTITY", "eng_query": "french translation for where is", "query_id": 191749}
+{"query": "బోర్గాటా బఫే ధర", "language": "te", "query_type": "NUMERIC", "eng_query": "borgata buffet price", "query_id": 1090345}
+{"query": "స్ప్రే డియోడరెంట్ పని చేస్తుందా?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "does spray deodorant work", "query_id": 171646}
+{"query": "మీరే దాన్ని స్వయంగా శుభ్రం చేసుకోండి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "do it yourself grout cleaning", "query_id": 157359}
+{"query": "ఆఫీస్ మేనేజర్ తాలూకు సగటు వేతనం తనఖా ఇచ్చే వారికి", "language": "te", "query_type": "NUMERIC", "eng_query": "average salary of a office manager mortgage lending", "query_id": 43115}
+{"query": "బే క్రెస్ట్ భాగస్వాములు ఎవరు", "language": "te", "query_type": "DESCRIPTION", "eng_query": "what is bay crest partners", "query_id": 1060335}
+{"query": "కౌంటీ జైలులో బంధించినప్పుడు రోజుకు ఎంత ఖర్చు అవుతుంది?", "language": "te", "query_type": "NUMERIC", "eng_query": "how much is it per day when locked up in county jail", "query_id": 322201}
+{"query": "బహుమతిగా ఇవ్వబడిన భద్రతకు ఖర్చు ప్రాతిపదికను ఇవ్వాలి.", "language": "te", "query_type": "NUMERIC", "eng_query": "cost basis for gifted security", "query_id": 100359}
+{"query": "కొత్త డ్రైవ్‌కి సిస్టమ్‌ను ఎలా కాపీ చేయాలి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how to copy system to new drive", "query_id": 353047}
+{"query": "పగిలిన పక్కటెముకలు నయం కావడానికి ఎంత సమయం పడుతుంది", "language": "te", "query_type": "NUMERIC", "eng_query": "how long does it take cracked ribs to heal", "query_id": 252638}
+{"query": "బాగా ఉబ్బుతున్న మెడ ట్రాక్షన్ పని చేస్తుందా?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "does inflatable neck traction work", "query_id": 167532}
+{"query": "ప్రాథమిక సంరక్షణ అమెరికన్ అకాడమీ ఆఫ్ ఫ్యామిలీ ఫిజీషియన్స్ నిర్వచనం", "language": "te", "query_type": "DESCRIPTION", "eng_query": "definition of primary care american academy of family physicians", "query_id": 137339}
+{"query": "చెర్రీలను ఎలా పాడుతారు", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how do i pit cherries", "query_id": 218882}
+{"query": "సబ్‌కార్టికల్ బ్యాండ్ హెటెరోటోపియా లక్షణాలు", "language": "te", "query_type": "ENTITY", "eng_query": "subcortical band heterotopia symptoms", "query_id": 1090344}
+{"query": "యానిమేటర్‌కి గ్లాస్‌డోర్‌లో ఎంత చెల్లిస్తారు?", "language": "te", "query_type": "NUMERIC", "eng_query": "how much does an animator get paid glassdoor", "query_id": 312512}
+{"query": "ఇంటెల్ హెచ్‌డి 3000లో ఎంత వీఆర్ఎఎం", "language": "te", "query_type": "NUMERIC", "eng_query": "how much vram in intel hd 3000", "query_id": 329976}
+{"query": "ఆర్మీ మెమోరాండమ్ టెంప్లేట్ ఫిల్ చేయగల పిడిఎఫ్.", "language": "te", "query_type": "DESCRIPTION", "eng_query": "army memorandum template fillable pdf", "query_id": 26745}
+{"query": "బేయర్న్ మ్యూనిచ్ అంటే ఏమిటి?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "what is bayern munich", "query_id": 1060323}
+{"query": "కర్టెన్ హుక్స్ రకాలు", "language": "te", "query_type": "DESCRIPTION", "eng_query": "curtain hooks types", "query_id": 114458}
+{"query": "గర్భధారణ సమయంలో రక్తస్రావం ఎంత సాధారణంగా ఉంటుంది", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how common is bleeding during pregnancy", "query_id": 211952}
+{"query": "రక్తంలో చక్కెరను తగ్గించడానికి ఆహారాలు మరియు పోషకాలు", "language": "te", "query_type": "ENTITY", "eng_query": "foods and supplements to lower blood sugar", "query_id": 188714}
+{"query": "పళ్ళు రాలిపోయే వయస్సు", "language": "te", "query_type": "NUMERIC", "eng_query": "age when teeth fall out", "query_id": 14449}
+{"query": "జిడియా డెలౌరాన్ నికర విలువ", "language": "te", "query_type": "NUMERIC", "eng_query": "giDa delauran net worth", "query_id": 194890}
+{"query": "నిర్దివాసితులను రక్షించడానికి ఎంతకాలం అమ్మాల్సి ఉంటుంది", "language": "te", "query_type": "NUMERIC", "eng_query": "how long would i be obligated to sell damsel in defense", "query_id": 273892}
+{"query": "చెవి ఇన్ఫెక్షన్లు పిల్లులలో మూర్ఛలకు కారణమవుతాయా?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "can ear infections cause seizures in cats?", "query_id": 66881}
+{"query": "గింజలతో కూడిన మార్ష్‌మెల్లో సలాడ్‌లో ఎన్ని కెలోరీలు ఉంటాయి.", "language": "te", "query_type": "NUMERIC", "eng_query": "how many calories in marshmallow salad with nuts", "query_id": 277559}
+{"query": "సమర్పణ సంభాషణ నిర్వచనం", "language": "te", "query_type": "DESCRIPTION", "eng_query": "submissive communication definition", "query_id": 1090343}
+{"query": "గాప్ మరియు ఐఎఫ్ఆర్‌ల బాండ్ సమస్య ఖర్చుల మధ్య వ్యత్యాసం", "language": "te", "query_type": "DESCRIPTION", "eng_query": "difference between gaap and ifrs bond issue costs", "query_id": 147373}
+{"query": "భద్రతలో బిబిఎస్ అంటే ఏమిటి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "what is bbs in safety", "query_id": 1060308}
+{"query": "ఒక గ్యాలన్‌లో ఎన్ని ఔన్సుల ద్రవం ఉంటుంది", "language": "te", "query_type": "NUMERIC", "eng_query": "how many ounces of liquid is in one gallon", "query_id": 291248}
+{"query": "ఉత్సాహంగా నిర్వచించండి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "excited define", "query_id": 183155}
+{"query": "ఒక్కో అపార్ట్‌మెంట్‌కు సగటు నివాసితుల సంఖ్య", "language": "te", "query_type": "NUMERIC", "eng_query": "average number of residents per apartment", "query_id": 39464}
+{"query": "వేసవిలో లేదా లాండ్రోలో సగటు వాతావరణం", "language": "te", "query_type": "NUMERIC", "eng_query": "average weather in summer orlando", "query_id": 47123}
+{"query": "అమెజాన్‌కు సెకనుకు ఎన్ని అభ్యర్థనలు వస్తాయి", "language": "te", "query_type": "NUMERIC", "eng_query": "how many requests per second does amazon get", "query_id": 294479}
+{"query": "చెట్టింకిస్ చనిపోయినప్పుడు అతని వయస్సు ఎంత?", "language": "te", "query_type": "NUMERIC", "eng_query": "how old was chet atkins when he died?", "query_id": 337365}
+{"query": "యోగా కండరాలను పెంచుతుందా?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "does yoga build muscle", "query_id": 174278}
+{"query": "ప్రపంచంలో ఎన్ని సమయ మండలాలు ఉన్నాయి?", "language": "te", "query_type": "NUMERIC", "eng_query": "how many time zones are in the world?", "query_id": 298113}
+{"query": "జీవనోపాధి వ్యవసాయం అనేది వ్యవసాయ నిపుణులచే వర్గీకరించబడింది.", "language": "te", "query_type": "DESCRIPTION", "eng_query": "subsistence agriculture is characterized by agriculturalists who", "query_id": 1090342}
+{"query": "బోటాక్స్ తర్వాత మీరు తినగలరా?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "can you eat after botox", "query_id": 77101}
+{"query": "బీసీఈ ఉత్పత్తి అంటే ఏమిటి?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "what is bce production usaf", "query_id": 1060300}
+{"query": "లూయిస్ ఎన్ ఐ వర్సెల్స్ మీద ఎంత డబ్బు ఖర్చు చేశాడు", "language": "te", "query_type": "NUMERIC", "eng_query": "how much money did louis xiv spend on versailles", "query_id": 324397}
+{"query": "దూరం స్కాట్స్‌డేల్ నుండి గ్రాండ్ క్యాన్యాన్ వరకు", "language": "te", "query_type": "NUMERIC", "eng_query": "distance scottsdale to grand canyon", "query_id": 154018}
+{"query": "ఫోర్స్డ్ ఎయిర్ యూనిట్‌ను ఎలా ఇన్‌స్టాల్ చేయాలి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how to install a forced air unit", "query_id": 365284}
+{"query": "ఒక పర్యటన సమయంలో గొప్ప లోయలో ఎక్కువ భాగాన్ని ఎలా చూడాలి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how to see the most of the grand canyon during a visit", "query_id": 378705}
+{"query": "ఒక పాస్‌పోర్ట్ ధర ఎంత", "language": "te", "query_type": "NUMERIC", "eng_query": "how much is the cost of a us passport", "query_id": 323155}
+{"query": "దోషిగా నిర్ధారించబడినందుకు జైలు అని అర్థంగా ఉంటుందా?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "does conviction mean jail", "query_id": 165007}
+{"query": "సోయాకు మలబద్ధకంతో ఏమైనా సంబంధం ఉందా?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "does soy have anything to do with constipation", "query_id": 171571}
+{"query": "నిజంగానే మనిషికి రెండు గుండెలు ఉంటాయా?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "do people really have two hearts", "query_id": 158323}
+{"query": "1980లో కళాశాల సగటు ఖర్చు", "language": "te", "query_type": "NUMERIC", "eng_query": "average cost of college in 1980", "query_id": 33306}
+{"query": "సబ్‌సైట్ నిర్వచనం", "language": "te", "query_type": "DESCRIPTION", "eng_query": "subsite definition", "query_id": 1090341}
+{"query": "బిసిపి మోడ్ అంటే ఏమిటి?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "what is bcp mode", "query_id": 1060256}
+{"query": "ఎలా ఒక డేటా డిలీట్ చేయాలి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how to delete a", "query_id": 354311}
+{"query": "వేరుచేయబడిన గ్యారేజీని నిర్మించడానికి ఖర్చు", "language": "te", "query_type": "NUMERIC", "eng_query": "cost to build a detached  garage", "query_id": 108946}
+{"query": "హాపాలాంగ్ కాసిడీ గుర్రం పేరు", "language": "te", "query_type": "ENTITY", "eng_query": "hopalong cassidy's horse's name", "query_id": 205251}
+{"query": "మీరు ఏకలుత్న శిబిరంలో ఒక స్థలాన్ని కేటాయించగలరా?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "can you reserve a site at eklutna campground", "query_id": 79375}
+{"query": "స్కాఫ్ అనేది నిర్వచనం", "language": "te", "query_type": "DESCRIPTION", "eng_query": "definition of scoff", "query_id": 138026}
+{"query": "బ్యాక్‌బెర్రీలో మ్యాక్‌ని ఎలా కనుగొంటాను", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how do i find the mac on backberry", "query_id": 218094}
+{"query": "మీరు తాజా కూరగాయలను ఎలా గడ్డకట్టుతారు?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how do you freeze fresh vegetables?", "query_id": 222240}
+{"query": "మొటిమలకు ఇంటి నివారణలు", "language": "te", "query_type": "DESCRIPTION", "eng_query": "home remedies for pimples", "query_id": 204579}
+{"query": "మీ శరీరంలో భయాన్ని ఎలా ఎదుర్కోవాలి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how to deal with fear in your body", "query_id": 354094}
+{"query": "జాన్ ఎక్లెస్ ఎలా చనిపోయాడు", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how did john eccles die", "query_id": 213818}
+{"query": "బిడియోప్స్ అంటే ఏమిటి?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "what is bdops", "query_id": 1060251}
+{"query": "1814 తర్వాత అమెరికన్ ప్రజాస్వామ్యం", "language": "te", "query_type": "DESCRIPTION", "eng_query": "american democracy after 1814", "query_id": 16582}
+{"query": "తప్పుడు ప్రతికూల గర్భధారణ పరీక్ష యొక్క కారణాలు", "language": "te", "query_type": "DESCRIPTION", "eng_query": "causes of false negative pregnancy test", "query_id": 86437}
+{"query": "మొదటి స్పందనదారులు ఎంత సంపాదిస్తారు", "language": "te", "query_type": "NUMERIC", "eng_query": "how much do first responders make", "query_id": 305650}
+{"query": "శిబిరం స్థలంలో విద్యుత్ ధర సగటున", "language": "te", "query_type": "NUMERIC", "eng_query": "average price of electricity on a campsite", "query_id": 40790}
+{"query": "స్లిమీ అనేది", "language": "te", "query_type": "DESCRIPTION", "eng_query": "define slimy", "query_id": 127186}
+{"query": "మహిళలు బరువు తగ్గడానికి కేలరీల కాలిక్యులేటర్", "language": "te", "query_type": "NUMERIC", "eng_query": "calories calculator to lose weight for women", "query_id": 59406}
+{"query": "టెస్టోస్టెరాన్ ఎలా తనిఖీ చేయబడుతుంది", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how is testosterone checked", "query_id": 237470}
+{"query": "జిమ్ టీచర్ కావడానికి డిగ్రీ అవసరమా?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "do you need a degree to be a gym teacher", "query_id": 160694}
+{"query": "ఒక సంవత్సరంలో వేర్వేరు వాటాలు మరియు నగదు పొందగలనా?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "can i open separate share and cash isas in one year", "query_id": 69304}
+{"query": "హోంగేరా అంటే", "language": "te", "query_type": "DESCRIPTION", "eng_query": "hongera meaning", "query_id": 205157}
+{"query": "రష్యన్‌లో ఎలాంటి బేర్ ఉంటుంది", "language": "te", "query_type": "DESCRIPTION", "eng_query": "what is bear in russian", "query_id": 1060239}
+{"query": "సక్యులెంట్ మొక్క అంటే", "language": "te", "query_type": "DESCRIPTION", "eng_query": "succulent plant meaning", "query_id": 1090338}
+{"query": "ఇక్ట్‌లో బ్యాండ్‌విడ్త్ నిర్వచనం", "language": "te", "query_type": "DESCRIPTION", "eng_query": "definition of bandwidth in ict", "query_id": 132733}
+{"query": "కళాశాల విద్యార్థి గృహనిర్మాణం యొక్క సగటు పరిమాణం", "language": "te", "query_type": "NUMERIC", "eng_query": "average size of college student housing", "query_id": 44018}
+{"query": "లివింగ్‌స్టన్, టెక్సాస్‌లోని హోటళ్ళు", "language": "te", "query_type": "PERSON", "eng_query": "hotels in livingston, tx", "query_id": 206044}
+{"query": "యుఎస్ఎలో ఎంతమంది హ్యామ్ రేడియో ఆపరేటర్లు ఉన్నారు", "language": "te", "query_type": "NUMERIC", "eng_query": "how many ham radio operators in the usa", "query_id": 285384}
+{"query": "ట్రైలర్ ర్యాంప్‌ను ఎలా తయారు చేయాలి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how to make a trailer ramp", "query_id": 368117}
+{"query": "మానవ సంతానంలో ఎన్ని క్రోమోజోమ్‌లు ఉంటాయి", "language": "te", "query_type": "NUMERIC", "eng_query": "how many chromosomes do human offspring", "query_id": 279525}
+{"query": "ఎండాక్స్ ట్రాన్స్‌ఫార్మర్ సంచులు ఎంత మందంగా ఉంటాయి?", "language": "te", "query_type": "NUMERIC", "eng_query": "how thick are the andax transformer sacks?", "query_id": 342133}
+{"query": "100% వాసెక్టమీలు", "language": "te", "query_type": "DESCRIPTION", "eng_query": "are vasectomies 100%", "query_id": 26054}
+{"query": "జో స్కార్బోరో ఎంత పురాతనమైనదో", "language": "te", "query_type": "NUMERIC", "eng_query": "how old is joe scarborough", "query_id": 335367}
+{"query": "బేర్ పేన్ మధ్య పేరు ఏంటి", "language": "te", "query_type": "PERSON", "eng_query": "what is bear payne's middle name", "query_id": 1060221}
+{"query": "ఎరిక్ ఎరిక్సన్ మానసిక విశ్లేషణాత్మక సిద్ధాంతాలలో ఎలా మార్పులు చేశాడు", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how did erik erikson make changes to psychoanalytic theories", "query_id": 213351}
+{"query": "పంటివిచ్చేతులు తమంత తాముగా పోతాయా?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "do ingrown toenails go away on their own", "query_id": 1101286}
+{"query": "అలాంటి రసం అంటే", "language": "te", "query_type": "DESCRIPTION", "eng_query": "such a sap meaning", "query_id": 1090337}
+{"query": "నేను ఒక కార్యక్రమాన్ని ఎలా నిర్వహిస్తాను", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how do i organise an event", "query_id": 218834}
+{"query": "అధిక భూమి యొక్క నిర్వచనం", "language": "te", "query_type": "DESCRIPTION", "eng_query": "definition of excess land", "query_id": 134494}
+{"query": "టమోటాలు వాపు కలిగించే ఆహారం.", "language": "te", "query_type": "DESCRIPTION", "eng_query": "are tomatoes an inflammatory food", "query_id": 25878}
+{"query": "ప్రయాణ శారీరక చికిత్సకుడు ఎలా అవ్వాలి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how to become a traveling physical therapist", "query_id": 345470}
+{"query": "గ్రిల్‌పై ఫ్లౌండర్‌ను ఎలా వండాలి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how to cook flounder on the grill", "query_id": 352409}
+{"query": "పరిశీలన కోసం ఆర్డర్‌పై సంతకం చేయడానికి వైద్యుడు ఎంత సమయం తీసుకుంటాడు", "language": "te", "query_type": "NUMERIC", "eng_query": "how long does a physician have to sign an order for observation", "query_id": 249941}
+{"query": "బాక్సైట్ నుండి గాలియం వెలికితీత ఎలా ఉంటుంది", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how is gallium extraction from bauxite", "query_id": 236701}
+{"query": "గల్బ్రైత్ అనే పేరుకు అర్థం", "language": "te", "query_type": "DESCRIPTION", "eng_query": "galbraith name meaning", "query_id": 1100337}
+{"query": "చదరపు మీటరుకు పిండిని గ్రాములుగా మార్చండి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "convert mils to grams per square meter", "query_id": 98739}
+{"query": "55 కంటే ఎక్కువ సమయం వెయిట్ లిఫ్టింగ్ అనేది రక్తపోటును 55 కంటే తగ్గిస్తుందా?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "does weightlifting reduce blood pressure for over 55s", "query_id": 174048}
+{"query": "స్యూ డెస్మండ్-హెల్మన్ జీతం", "language": "te", "query_type": "NUMERIC", "eng_query": "sue desmond-hellmann salary", "query_id": 1090336}
+{"query": "క్షయింపును నిర్వచించండి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "define dissipation", "query_id": 120451}
+{"query": "విశ్వశాస్త్రంలో చీకటి యుగాలు ఏమిటి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "cosmology what is the dark ages", "query_id": 100250}
+{"query": "మిస్‌ఫిట్ షైన్‌ని ఐఫోన్‌కి ఎలా లింక్ చేయాలి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how to link misfit shine to iphone", "query_id": 366826}
+{"query": "వేళ్లు నొప్పికి కారణాలు", "language": "te", "query_type": "DESCRIPTION", "eng_query": "causes for fingers to hurt", "query_id": 84841}
+{"query": "ఫ్యాక్టరీ సబ్ లేకుండా డాడ్జ్ రామ్‌లో ఓమ్ సబ్ మరియు బాక్స్‌ను ఎలా ఇన్‌స్టాల్ చేయాలి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how to install a oem sub and box into a dodge ram without factory sub", "query_id": 365327}
+{"query": "సగటు వాతావరణంతో కూడిన హవాయి సీజన్లు", "language": "te", "query_type": "DESCRIPTION", "eng_query": "hawaii seasons with average weather", "query_id": 199311}
+{"query": "మీ ఫెడరల్ ఇన్కమ్ టాక్స్ రిఫండ్ చెక్‌ను పొందడానికి ఎంత సమయం పడుతుంది", "language": "te", "query_type": "NUMERIC", "eng_query": "how long should it take to get your federal income tax refund check", "query_id": 267108}
+{"query": "ప్రవర్తనా సంబంధమైన సందర్శన పద్ధతి ఏమిటి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "what is behavioral event interviewing method", "query_id": 1060217}
+{"query": "కామెర్లు తిరిగి రావచ్చు", "language": "te", "query_type": "DESCRIPTION", "eng_query": "can jaundice come back", "query_id": 70491}
+{"query": "దంతంపై టోపీ ధర", "language": "te", "query_type": "NUMERIC", "eng_query": "cost for a cap on a tooth", "query_id": 100714}
+{"query": "ట్రంప్‌ను అభిశంసించాలని డో గోప్ కోరుకుంటున్నారా?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "do gop want trump to be impeached", "query_id": 156499}
+{"query": "సూట్ నిర్వచనం", "language": "te", "query_type": "DESCRIPTION", "eng_query": "suit definition", "query_id": 1090335}
+{"query": "సున్నా యొక్క 'ఎంపిక చేయబడిన సూచిక' ఆస్తిని చదవలేను", "language": "te", "query_type": "DESCRIPTION", "eng_query": "cannot read property 'selectedindex' of null", "query_id": 82104}
+{"query": "కాఫీ-మేట్ సహజ ఆనందం ఐరిష్ క్రీమ్‌లో కేలరీలు", "language": "te", "query_type": "NUMERIC", "eng_query": "calories in coffee-mate natural bliss irish cream", "query_id": 60147}
+{"query": "ఫైర్డ్ అనే పదంలో ఎన్ని అక్షరాలు ఉన్నాయి", "language": "te", "query_type": "NUMERIC", "eng_query": "how many syllables are in the word fired", "query_id": 297555}
+{"query": "మాలో ఎన్ని సబ్‌వే ఫ్రాంచైజీలు ఉన్నాయి", "language": "te", "query_type": "NUMERIC", "eng_query": "how many subway franchises are in the us", "query_id": 297440}
+{"query": "ఒక టాయోటా ప్రియస్ హెడ్‌లైట్ ధర ఎంత ఉండాలి", "language": "te", "query_type": "NUMERIC", "eng_query": "how much should a toyota prius headlight cost", "query_id": 327337}
+{"query": "అటోర్వాస్టాటిన్ పీడకలకు కారణమవుతుందా?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "does atorvastatin cause nightmares", "query_id": 163501}
+{"query": "ఏమిటో", "language": "te", "query_type": "DESCRIPTION", "eng_query": "what is bein", "query_id": 1060215}
+{"query": "కార్డియో కొవ్వును ఎంతసేపు కాల్చాలి", "language": "te", "query_type": "NUMERIC", "eng_query": "how long for cardio to burn fat", "query_id": 260883}
+{"query": "డాడ్ ప్రొవైడర్ బిల్లింగ్ శిక్షణ", "language": "te", "query_type": "DESCRIPTION", "eng_query": "dodd provider billing training", "query_id": 161697}
+{"query": "గరుకుగా ఉండే జుట్టు ఎంతసేపు కుదుపుతుంది", "language": "te", "query_type": "NUMERIC", "eng_query": "how long does rough hair shrink", "query_id": 259449}
+{"query": "ఎడ్వర్డ్ లెవెల్లిన్ అతిపెద్ద బ్లాక్ బాస్ పట్టుబడింది", "language": "te", "query_type": "NUMERIC", "eng_query": "edward llewellyn largest black bass caught", "query_id": 178136}
+{"query": "సల్సి నిర్వచనం", "language": "te", "query_type": "DESCRIPTION", "eng_query": "sulci definition", "query_id": 1090334}
+{"query": "నిర్వచనం వైకల్య బీమా", "language": "te", "query_type": "DESCRIPTION", "eng_query": "definition   disability insurance", "query_id": 130023}
+{"query": "లాటిన్ గ్రీకు నుండి వచ్చిందా?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "did latin come from greek", "query_id": 144381}
+{"query": "పంది మాంసం వేలికి ఎలా గ్రిల్ చేయాలి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how to grill pork fingers", "query_id": 363567}
+{"query": "శారీరక చికిత్స మెడలో కీళ్ళవాపు నొప్పికి సహాయపడుతుందా?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "can physical therapy help arthritis pain in the neck", "query_id": 72408}
+{"query": "మహిళల ఋతుస్రావాలు సమకాలీకరించబడతాయి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "do women's periods sync", "query_id": 159976}
+{"query": "నిర్జలీకరణం వల్ల కాళ్ళు వాపు వస్తుంది", "language": "te", "query_type": "DESCRIPTION", "eng_query": "can dehydration cause achy legs", "query_id": 66276}
+{"query": "గామా కిరణాలతో ఏమి తయారవుతుంది", "language": "te", "query_type": "DESCRIPTION", "eng_query": "what is being made by gamma rays", "query_id": 1060174}
+{"query": "మీ శరీరంలోని అదనపు ద్రవాన్ని ఎలా తొలగించాలి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how to get rid of excess fluid in your body", "query_id": 362486}
+{"query": "క్యాలెండర్ స్టోన్ నిర్వచనం", "language": "te", "query_type": "DESCRIPTION", "eng_query": "calendar stone definition", "query_id": 58772}
+{"query": "ప్రమాదాల గురించి కస్టమర్‌లకు తెలియజేయడానికి టానింగ్ సెలూన్‌లు అవసరమా?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "are tanning salons required to inform customers of risks", "query_id": 25254}
+{"query": "చియా విత్తనాలను ఇంట్లో నాటవచ్చు.", "language": "te", "query_type": "DESCRIPTION", "eng_query": "can chia seeds be planted in house", "query_id": 65593}
+{"query": "సల్ఫాసలాజిన్ రుమటాయిడ్ ఆర్థరైటిస్ దుష్ప్రభావాలు", "language": "te", "query_type": "DESCRIPTION", "eng_query": "sulfasalazine rheumatoid arthritis side effects", "query_id": 1090333}
+{"query": "శిక్షణ ప్రయోగశాల కుక్కపిల్లను పెంచడానికి వయస్సు", "language": "te", "query_type": "NUMERIC", "eng_query": "age to start training lab puppy", "query_id": 14373}
+{"query": "డీఆర్ ఉన్నారు, షిర్లీ బెస్సీ", "language": "te", "query_type": "PERSON", "eng_query": "dr who, shirley bessie", "query_id": 175499}
+{"query": "ఎక్సెల్‌ను పిలవడానికి దిగుబడిని ఎలా లెక్కించాలి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how to calculate yield to call excel", "query_id": 347540}
+{"query": "జపనీస్ రామెన్ కాచిన కాచిన ద్రవాన్ని 12 గంటల పాటు ఎలా ఉడకబెట్టాలి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how to make japanese ramen broth boil for 12 hours", "query_id": 369132}
+{"query": "ఫ్లాయిడ్ తన విజయాలను ఎప్పుడూ దానం చేయలేదు", "language": "te", "query_type": "PERSON", "eng_query": "has floyd mayweather ever donated his winnings", "query_id": 198925}
+{"query": "డెస్లోగ్ మో వద్ద బెల్గ్రేడ్ బ్యాంక్ నంబర్ ఏమిటి", "language": "te", "query_type": "NUMERIC", "eng_query": "what is belgrade bank number at desloge mo", "query_id": 1060170}
+{"query": "హాట్ జోన్ నిర్వచన వ్యాధి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "hot zone definition disease", "query_id": 205835}
+{"query": "ఒక మినీ స్కిడ్ స్టీర్ ధర ఎంత", "language": "te", "query_type": "NUMERIC", "eng_query": "how much does a mini skid steer cost", "query_id": 310404}
+{"query": "పేసన్‌లో నెలవారీ సగటు ఉష్ణోగ్రత", "language": "te", "query_type": "NUMERIC", "eng_query": "average temperature by month in payson, az", "query_id": 44915}
+{"query": "గ్లూకోజ్ స్థాయిలను ఎలా తగ్గించాలి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how to get glucose levels down", "query_id": 361661}
+{"query": "సెల్సియస్ మరియు పౌండ్ల మధ్య వ్యత్యాసం", "language": "te", "query_type": "DESCRIPTION", "eng_query": "difference between a celsius and pounds", "query_id": 146115}
+{"query": "సల్ట్రీ అంటే", "language": "te", "query_type": "DESCRIPTION", "eng_query": "sultry meaning", "query_id": 1090332}
+{"query": "ఆదాయ ప్రకటన పొందని ఆదాయం వసూలు చేయబడింది.", "language": "te", "query_type": "DESCRIPTION", "eng_query": "do unearned revenue go income statement", "query_id": 159641}
+{"query": "గ్లూకోసిల్ ప్రయోజనాలు", "language": "te", "query_type": "DESCRIPTION", "eng_query": "benefits of glucocil", "query_id": 50810}
+{"query": "ఒబామా మళ్ళీ అధ్యక్షుడిగా పోటీ చేయవచ్చు.", "language": "te", "query_type": "DESCRIPTION", "eng_query": "can obama run for president again", "query_id": 71932}
+{"query": "మిచిగాన్ ఇంటర్నేషనల్ స్పీడ్‌వే ఎంత దూరం ఉంది", "language": "te", "query_type": "NUMERIC", "eng_query": "how far is michigan international speedway", "query_id": 231726}
+{"query": "బెల్స్ పాల్సీ ఏది సంబంధించినది?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "what is bell's palsy related to", "query_id": 1060165}
+{"query": "హోత్ పేరు", "language": "te", "query_type": "DESCRIPTION", "eng_query": "hoath name", "query_id": 203961}
+{"query": "ప్రసారంలో తరంగ ఫలకాన్ని ఎంత భర్తీ చేయాలి", "language": "te", "query_type": "NUMERIC", "eng_query": "how much to replace wave plate in transmission", "query_id": 329539}
+{"query": "పీడియాట్రిక్ ఆర్థోపెడిక్ సర్జన్ కావడానికి ఎంత సమయం పడుతుంది", "language": "te", "query_type": "NUMERIC", "eng_query": "how long does it take to become a pediatric orthopedic surgeon", "query_id": 255591}
+{"query": "రిలే రూపాల నిర్వచనం", "language": "te", "query_type": "DESCRIPTION", "eng_query": "definition of relay forms", "query_id": 137728}
+{"query": "నర్సు జీతం ఎంత", "language": "te", "query_type": "NUMERIC", "eng_query": "how much nurse pay", "query_id": 325643}
+{"query": "డెల్టా ఐటా సిగ్మా", "language": "te", "query_type": "DESCRIPTION", "eng_query": "delta iota sigma", "query_id": 140746}
+{"query": "బరో ఆఫ్ మీడియా బిజినెస్ ప్రివిలేజ్ టాక్స్", "language": "te", "query_type": "DESCRIPTION", "eng_query": "borough of media business privilege tax", "query_id": 1090330}
+{"query": "డీమ్యూటువలైజేషన్ నుండి యాక్సా స్టాక్ యొక్క ఖర్చు ప్రాతిపదిక", "language": "te", "query_type": "NUMERIC", "eng_query": "cost basis of axa stock from demutualization", "query_id": 100365}
+{"query": "ఇంటి ప్రణాళికలను రూపొందించడానికి ఖర్చు", "language": "te", "query_type": "NUMERIC", "eng_query": "cost to draw house plans", "query_id": 109309}
+{"query": "ట్రయల్ బ్యాలెన్స్ షీట్‌ను ఎలా సృష్టించాలి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how to create a trial balance sheet", "query_id": 353418}
+{"query": "బెనెకలోరీ అంటే ఏమిటి?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "what is benecalorie?", "query_id": 1060160}
+{"query": "ఎక్కువ నీరు తాగడం బరువు తగ్గడానికి సహాయపడుతుంది.", "language": "te", "query_type": "NUMERIC", "eng_query": "drinking lots of water can help lose weight", "query_id": 175854}
+{"query": "అలైన్ ఎంత పాతదో", "language": "te", "query_type": "NUMERIC", "eng_query": "how old is alaine", "query_id": 334244}
+{"query": "USB కేబుల్‌ని ఉపయోగించి రెండు ల్యాప్‌టాప్‌లను ఎలా కనెక్ట్ చేయాలి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how to connect two laptops using usb cable", "query_id": 351479}
+{"query": "లిత్రువానియాలో జన్మించిన నటి", "language": "te", "query_type": "PERSON", "eng_query": "actress who born at litrhuania", "query_id": 10945}
+{"query": "మీ ప్రసార ద్రవాన్ని ఎంత తరచుగా మార్చాలి", "language": "te", "query_type": "NUMERIC", "eng_query": "how often should change your transmission fluid", "query_id": 332213}
+{"query": "మితిమీరిన తాగుడు తర్వాత మీ శరీరం సాధారణ స్థితికి ఎంత కాలం తీసుకుంటుంది.", "language": "te", "query_type": "NUMERIC", "eng_query": "how long before your body gets back to normal after binge drinking", "query_id": 240923}
+{"query": "శిఖరాగ్రం నిర్వచించబడింది", "language": "te", "query_type": "DESCRIPTION", "eng_query": "summit define", "query_id": 1090329}
+{"query": "మీరు వివాహాన్ని ఎంతకాలం రద్దు చేయగలరు", "language": "te", "query_type": "NUMERIC", "eng_query": "how long can you annul a marriage", "query_id": 242776}
+{"query": "కార్నీలియన్ రంగు అంటే", "language": "te", "query_type": "DESCRIPTION", "eng_query": "carnelian color meaning", "query_id": 82842}
+{"query": "వివిధ రకాల నిర్మాణ వాహనాలు", "language": "te", "query_type": "DESCRIPTION", "eng_query": "different types of construction vehicles", "query_id": 150315}
+{"query": "డ్యూయల్ ఫ్లష్ టాయిలెట్ వల్ల కలిగే ప్రయోజనం", "language": "te", "query_type": "DESCRIPTION", "eng_query": "what is benefit of dual flush toilet", "query_id": 1060137}
+{"query": "గ్యారీ కోపెర్ చనిపోయినప్పుడు అతని వయస్సు ఎంత", "language": "te", "query_type": "NUMERIC", "eng_query": "how old was gary cooper when he died", "query_id": 337413}
+{"query": "సోలారిస్ 11లో సోలారిస్ క్లస్టర్ 4.2ని ఎలా ఇన్‌స్టాల్ చేయాలి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how to install solaris cluster 4.2 in solaris 11", "query_id": 365751}
+{"query": "అక్రోబాట్ ఉచిత డౌన్‌లోడ్‌లో మద్దతు ఇచ్చే ఫైళ్లను కలపండి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "combine supported files in acrobat free download", "query_id": 95014}
+{"query": "హారిసన్ ఫోర్డ్ కుమారుడు లియామ్", "language": "te", "query_type": "PERSON", "eng_query": "harrison ford's son liam", "query_id": 198691}
+{"query": "గ్రేట్ ఫ్లోరిడా ఇన్సూరెన్స్ ఫ్రాంచైజీని కొనడానికి ఎంత ఖర్చవుతుంది", "language": "te", "query_type": "NUMERIC", "eng_query": "how much does it cost to buy a great Florida Insurance franchise", "query_id": 315019}
+{"query": "చైనా మరియు ఆస్ట్రేలియా మధ్య దూరం", "language": "te", "query_type": "NUMERIC", "eng_query": "distance between china and australia", "query_id": 153034}
+{"query": "బండ్ నిర్వచనం", "language": "te", "query_type": "DESCRIPTION", "eng_query": "bund- definition", "query_id": 57119}
+{"query": "సమిట్ లీగ్ కమిషనర్", "language": "te", "query_type": "PERSON", "eng_query": "summit league commissioner", "query_id": 1090328}
+{"query": "జున్నును ఎలా మంచిగా అనిపించేలా చేయాలి?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "How to make cheese feel better?", "query_id": 4302}
+{"query": "తేమ ఎలా కాప్‌డ్‌ను ప్రభావితం చేస్తుంది", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how does damp affect copd", "query_id": 225943}
+{"query": "బెంథోస్ అంటే ఏమిటి?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "what is benthos", "query_id": 1060134}
+{"query": "కాస్మోస్ వార్షికాలు", "language": "te", "query_type": "DESCRIPTION", "eng_query": "are cosmos annuals", "query_id": 21872}
+{"query": "డాక్యుమెంట్స్ బ్రీచ్ డెఫినిషన్", "language": "te", "query_type": "DESCRIPTION", "eng_query": "documents breach definition", "query_id": 161612}
+{"query": "ఒక పెళ్లికాని వ్యక్తి చట్టబద్ధంగా ఒక మహిళను దత్తత తీసుకోవచ్చా?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "can an unmarried man adopt a woman legally", "query_id": 64337}
+{"query": "ఓవెన్‌లో గొడ్డు మాంసం బ్రిస్కెట్‌ను ఎలా తయారు చేయాలి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how to prepare beef brisket in the oven", "query_id": 373018}
+{"query": "పింక్ కళ్ళతో చల్లని లక్షణాలు", "language": "te", "query_type": "ENTITY", "eng_query": "cold symptoms with pink eye", "query_id": 94416}
+{"query": "ఫినోబార్బ్ స్థాయి రక్త పరీక్ష", "language": "te", "query_type": "DESCRIPTION", "eng_query": "are phenobarb level blood test", "query_id": 24251}
+{"query": "ఒక గిగ్‌లో ఎన్ని మంది ఉంటారు", "language": "te", "query_type": "NUMERIC", "eng_query": "how many mbs in a gig", "query_id": 288139}
+{"query": "స్మిత్‌విల్లేలోని హోటళ్ళు, ఎన్‌జె", "language": "te", "query_type": "PERSON", "eng_query": "hotels in smithville, nj", "query_id": 206100}
+{"query": "సూర్యోదయ ధర చాపర్ ప్రదేశాలు", "language": "te", "query_type": "NUMERIC", "eng_query": "sunoco price chopper locations", "query_id": 1090327}
+{"query": "పిండి మరియు నీటితో ఓబ్లెక్ ఎలా తయారు చేయాలి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how to make oobleck with flour and water", "query_id": 369379}
+{"query": "బెర్టెల్లి అంటే ఏమిటి?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "what is bertelli mean?", "query_id": 1060130}
+{"query": "ఎను ప్రోటీన్ షేక్", "language": "te", "query_type": "DESCRIPTION", "eng_query": "enu protein shake", "query_id": 180887}
+{"query": "కాంటినెంటల్ ఎక్స్‌ట్రీమ్ కాంటాక్ట్ డిడబ్ల్యూసీఏ ధర", "language": "te", "query_type": "NUMERIC", "eng_query": "continental extremecontact dws canada price", "query_id": 97772}
+{"query": "మైక్రోవేవ్‌లో పవర్ స్థాయిని ఎలా మార్చాలి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how to change power level on microwave", "query_id": 348815}
+{"query": "సెంచరీలింక్ డిఫాల్ట్ గేట్‌వే చిరునామా", "language": "te", "query_type": "NUMERIC", "eng_query": "centurylink default gateway address", "query_id": 89884}
+{"query": "మానవులకు ఎన్ని రోజులు ఉన్నాయి?", "language": "te", "query_type": "NUMERIC", "eng_query": "how many days are there for human beings?", "query_id": 280806}
+{"query": "యాపిల్ ఐఎమ్ఎసి జి4ని ఎలా తెరవాలి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how to open The Apple iMac G4/", "query_id": 371485}
+{"query": "పాత మైక్రోసాఫ్ట్ ఆఫీస్‌ని అన్‌ఇన్‌స్టాల్ చేయాలా?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "do i need to uninstall old microsoft office", "query_id": 157105}
+{"query": "ఫెన్స్‌పై ఎంత తరచుగా బ్రేస్ వేయాలి", "language": "te", "query_type": "NUMERIC", "eng_query": "how often should you do a brace on a fence", "query_id": 332447}
+{"query": "ఇంటర్న్‌లకు చెల్లిస్తారా?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "do interns get paid", "query_id": 1101285}
+{"query": "మాకాన్ గా యొక్క సన్‌ట్రస్ట్ రౌటింగ్ నంబర్", "language": "te", "query_type": "NUMERIC", "eng_query": "suntrust routing number for macon ga", "query_id": 1090326}
+{"query": "స్టాక్ కొనుగోలు చేయడానికి ఏ రోజు ఉత్తమమైనది]", "language": "te", "query_type": "DESCRIPTION", "eng_query": "what is best day to buy stock]", "query_id": 1060111}
+{"query": "కుటుంబ న్యాయస్థానం రాజ్యాంగాన్ని సమర్థించాలా?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "do family court have to uphold the constitution", "query_id": 156253}
+{"query": "హాక్ బయాలజీ తరగతికి ఎంత ఖర్చు అవుతుంది", "language": "te", "query_type": "NUMERIC", "eng_query": "how much does hacc biology class cost", "query_id": 314007}
+{"query": "హుడ్-1లోని 803వ పంక్తిని నేను తీసివేయగలనా", "language": "te", "query_type": "DESCRIPTION", "eng_query": "can i deduct line 803 on hud-1", "query_id": 68727}
+{"query": "దేశం మరియు రాష్ట్రం మరియు రాష్ట్ర దేశం మధ్య వ్యత్యాసం", "language": "te", "query_type": "DESCRIPTION", "eng_query": "difference between nation and state and nation state", "query_id": 148037}
+{"query": "జీర్ణవ్యవస్థ క్యాన్సర్ లక్షణాలు", "language": "te", "query_type": "ENTITY", "eng_query": "digestive tract cancer symptoms", "query_id": 151340}
+{"query": "డ్యాన్సింగ్ విత్ ది స్టార్స్ తారాగణం", "language": "te", "query_type": "PERSON", "eng_query": "cast of Dancing with the stars", "query_id": 83264}
+{"query": "కెఫీన్ ఎలా జీవక్రియ చేయబడుతుంది", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how is caffeine metabolized", "query_id": 236362}
+{"query": "దూర దృష్టిని అంటే", "language": "te", "query_type": "NUMERIC", "eng_query": "distance vision is called", "query_id": 154100}
+{"query": "బేస్‌మెంట్ మరియు యుర్ట్ మిన్‌లను ఏర్పాటు చేయడానికి ఖర్చు", "language": "te", "query_type": "NUMERIC", "eng_query": "cost to install basement and yurt mn", "query_id": 109718}
+{"query": "పార్మేసన్ సాస్ ఎలా తయారు చేయాలి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how to make parmesan sauce", "query_id": 369424}
+{"query": "బాక్టీరియా ప్రోకార్యోటిక్", "language": "te", "query_type": "DESCRIPTION", "eng_query": "are bacteria prokaryotic", "query_id": 1100332}
+{"query": "సుపీరియర్ కోర్టు ఎఫిలింగ్ ఫోన్ నంబర్", "language": "te", "query_type": "NUMERIC", "eng_query": "superior court efiling phone number", "query_id": 1090325}
+{"query": "టెస్టోస్టెరాన్ ఫలితాలకు ఎంత కాలం పడుతుంది", "language": "te", "query_type": "NUMERIC", "eng_query": "how long before testosterone results", "query_id": 240779}
+{"query": "వాంతులు వచ్చేటప్పుడు తినడానికి ఆహారాలు", "language": "te", "query_type": "NUMERIC", "eng_query": "foods to eat when throwing up", "query_id": 190227}
+{"query": "ఇంజిన్‌ను యంత్రంగా తయారు చేయడానికి ఖర్చు", "language": "te", "query_type": "NUMERIC", "eng_query": "cost to machine an engine", "query_id": 110121}
+{"query": "చర్మ ఫిస్టులాను నిర్వచించండి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "define skin fistula", "query_id": 127147}
+{"query": "అద్దెదారు బీమా ఎంత తెరవాలి", "language": "te", "query_type": "NUMERIC", "eng_query": "how much to open a renter's insurance", "query_id": 329233}
+{"query": "శరీర బరువుకు అడ్డరాల్ మోతాదు", "language": "te", "query_type": "NUMERIC", "eng_query": "adderall dose to body weight", "query_id": 11390}
+{"query": "ఎలా మళ్ళీ సూచనను సూచించాలి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how to mla reference paraphrase", "query_id": 370941}
+{"query": "కూల్ స్కల్ప్టింగ్ చికిత్సల మధ్య ఎంత సమయం", "language": "te", "query_type": "NUMERIC", "eng_query": "how long between coolsculpting treatments", "query_id": 240944}
+{"query": "రష్యన్ దేశంలో సగటు ఆదాయం", "language": "te", "query_type": "NUMERIC", "eng_query": "average income for russian", "query_id": 37696}
+{"query": "ఆహారాన్ని వెచ్చగా ఉంచడానికి ఏ విధమైన ఓవెన్ ఉష్ణోగ్రతను ఉపయోగించాలి", "language": "te", "query_type": "NUMERIC", "eng_query": "what is best oven temp to use to keep food warm", "query_id": 1060109}
+{"query": "గివౌడన్ ప్రధాన కార్యాలయం ఫోన్ నంబర్", "language": "te", "query_type": "NUMERIC", "eng_query": "givaudan headquarters phone number", "query_id": 195088}
+{"query": "సుపీరియర్ గ్లూటియల్ నరాలు ఏన్నర్వేట్స్ వాటిని", "language": "te", "query_type": "DESCRIPTION", "eng_query": "superior gluteal nerve innervates what", "query_id": 1090324}
+{"query": "సోనోమా సిఎలో సగటు నెలవారీ ఉష్ణోగ్రత", "language": "te", "query_type": "NUMERIC", "eng_query": "average monthly temperature in sonoma ca", "query_id": 39139}
+{"query": "ఎంబీఏ చేయడానికి కళాశాలలో ఎన్ని సంవత్సరాలు పడుతుంది", "language": "te", "query_type": "NUMERIC", "eng_query": "how many years in college to get an mba", "query_id": 300982}
+{"query": "కుక్క పళ్ళను శుభ్రం చేయడానికి సగటు ఖర్చు", "language": "te", "query_type": "NUMERIC", "eng_query": "average cost of canine teeth cleaning", "query_id": 33230}
+{"query": "నిర్వచన పునరుద్ధరణ", "language": "te", "query_type": "DESCRIPTION", "eng_query": "definition reparations", "query_id": 139806}
+{"query": "పాత ఫర్నిచర్‌ను ఎలా తిరిగి పెయింట్ చేయాలి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "DIY How to Repaint Old Furniture", "query_id": 2618}
+{"query": "జానీ మాన్జీల్ విలువ ఎంత", "language": "te", "query_type": "NUMERIC", "eng_query": "how much is johnny manziel worth", "query_id": 322391}
+{"query": "ఒక నెలలో మీ జుట్టు ఎంత పెరుగుతుంది", "language": "te", "query_type": "NUMERIC", "eng_query": "how long does your hair grow in a month", "query_id": 260474}
+{"query": "న్యూయార్క్ మెరుగైన డ్రైవింగ్ లైసెన్స్ ఎంతకాలం ఉంటుంది", "language": "te", "query_type": "NUMERIC", "eng_query": "how long does a new york enhanced driver's license", "query_id": 249844}
+{"query": "గ్రీస్‌లో తేడాలు మరియు ఆధునిక వ్యవస్థ", "language": "te", "query_type": "DESCRIPTION", "eng_query": "differences in greece and modern system", "query_id": 149627}
+{"query": "వెన్నునొప్పికి కౌంటర్ క్రీముల కంటే ఏది ఉత్తమమైనది", "language": "te", "query_type": "ENTITY", "eng_query": "what is best over the counter creams for back spasms", "query_id": 1060090}
+{"query": "మీరు ఏమంటున్నారో విశ్లేషించండి.", "language": "te", "query_type": "DESCRIPTION", "eng_query": "filter what do you say", "query_id": 186883}
+{"query": "సూపర్ మార్కెట్ అంటే", "language": "te", "query_type": "DESCRIPTION", "eng_query": "supermarket meaning", "query_id": 1090323}
+{"query": "ఒకేలా ఉండే కవలలు వేర్వేరు లింగాలకు చెందినవారా?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "can identical twins be different sexes?", "query_id": 70250}
+{"query": "ఖచ్చితత్వ నిర్వచన గణిత పదం", "language": "te", "query_type": "DESCRIPTION", "eng_query": "accuracy definition math term", "query_id": 10486}
+{"query": "ఎన్ని గ్యాలన్ ఫ్యూయల్ ట్యాంక్‌లకు హజ్మత్ అవసరమవుతుంది", "language": "te", "query_type": "NUMERIC", "eng_query": "how many gallon fuel tank requires hazmat", "query_id": 283985}
+{"query": "ఇనుప మనిషి అంతర్యుద్ధ దావా అతనికి అధికారాన్ని ఇస్తుందా?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "does iron man civil war suit give him power", "query_id": 167661}
+{"query": "కప్రస్ ఆక్సైడ్ కోసం రసాయన సూత్రం", "language": "te", "query_type": "NUMERIC", "eng_query": "chemical formula for cuprous oxide", "query_id": 91231}
+{"query": "2013లో అమెరికాలో సగటు ఉపాధ్యాయ జీతం", "language": "te", "query_type": "NUMERIC", "eng_query": "average teacher salary in usa 2013", "query_id": 44559}
+{"query": "మీరు ఎంత సమయం పొగలో ఉడికించిన టర్కీ రెక్కలను వండాలి", "language": "te", "query_type": "NUMERIC", "eng_query": "how much time should you cook smoked turkey wings", "query_id": 328672}
+{"query": "పిల్లలలో వేలితో కూడిన చేతులు తెరపై కనిపించడానికి కారణాలు", "language": "te", "query_type": "DESCRIPTION", "eng_query": "causes of trigger finger in children", "query_id": 88831}
+{"query": "వాహన డిజైన్‌లను విక్రయించే కంపెనీలు", "language": "te", "query_type": "PERSON", "eng_query": "companies that sell vehicle designs", "query_id": 1060082}
+{"query": "ఎల్లప్పుడూ మీ అమ్మాయి సెలైన్ డయాన్ పాటలు", "language": "te", "query_type": "DESCRIPTION", "eng_query": "always be your girl celine dion lyrics", "query_id": 16073}
+{"query": "సగటు డీజిల్ రిటైల్ ధర", "language": "te", "query_type": "NUMERIC", "eng_query": "average diesel retail price", "query_id": 36017}
+{"query": "సూపర్‌సీడెడ్ సాధారణ నిర్ణయ సంఖ్య", "language": "te", "query_type": "NUMERIC", "eng_query": "superseded general decision number", "query_id": 1090322}
+{"query": "కౌంటర్లను మార్చడానికి ఎంత సమయం పడుతుంది", "language": "te", "query_type": "NUMERIC", "eng_query": "how long does it take to replace counters", "query_id": 258080}
+{"query": "గ్రోలైఫ్ స్టాక్ ధర", "language": "te", "query_type": "NUMERIC", "eng_query": "growlife stock price", "query_id": 197386}
+{"query": "పెకాన్ తయారు చేయడానికి ఎంత నీరు పడుతుంది", "language": "te", "query_type": "NUMERIC", "eng_query": "how much water does it take to make pecan", "query_id": 330143}
+{"query": "కొవ్వు నాడీ ప్రసారకాలు", "language": "te", "query_type": "DESCRIPTION", "eng_query": "are lipids neurotransmitters", "query_id": 23426}
+{"query": "మోరింగా అల్లం టీ ప్రయోజనాలు", "language": "te", "query_type": "DESCRIPTION", "eng_query": "benefits of moringa ginger tea", "query_id": 51022}
+{"query": "మా కంప్యూటర్ భారతదేశంలో ఉన్నట్లు ఎలా కనిపించేలా చేయాలి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how to make it look like my computer is in india", "query_id": 369128}
+{"query": "మూసివేసిన తర్వాత ఎస్క్రో చెక్ ఎంతసేపు పడుతుంది", "language": "te", "query_type": "NUMERIC", "eng_query": "how long to get escrow check after closing", "query_id": 270726}
+{"query": "బీటైన్ ప్లస్ హెచ్‌పి అంటే", "language": "te", "query_type": "DESCRIPTION", "eng_query": "what is betaine plus hp for", "query_id": 1060075}
+{"query": "దంత మూలాంతరణాల సగటు ధర", "language": "te", "query_type": "NUMERIC", "eng_query": "average price for dental implants", "query_id": 40535}
+{"query": "70663 నుండి నాష్‌విల్లే వరకు ఎన్ని రౌండ్ ట్రిప్ మైళ్లు", "language": "te", "query_type": "NUMERIC", "eng_query": "how many round trip miles from 70663 to nashville, tn", "query_id": 294720}
+{"query": "iPad వీక్షణ కోణాన్ని ఎలా పరిమితం చేయాలి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how to limit viewing angle of ipad", "query_id": 366797}
+{"query": "సూపర్ స్టోర్ కాస్ట్ మరియు సిబ్బంది", "language": "te", "query_type": "PERSON", "eng_query": "superstore cast and crew", "query_id": 1090321}
+{"query": "గోతిక్ శిల్పం రోమన్ శిల్పం నుండి ఎలా భిన్నంగా ఉంటుంది? చిత్రాలు ఎలా భిన్నంగా ఉంటాయి?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how does gothic sculpture differ from romanesque sculpture? how does the imagery differ?", "query_id": 226383}
+{"query": "పంచదార లేని జిగురు డయేరియాకు కారణమవుతుందా?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "does sugarless gum cause diarrhea", "query_id": 171906}
+{"query": "డిష్ స్టాక్ ధర యాక్స్", "language": "te", "query_type": "NUMERIC", "eng_query": "dish stock price yahoo", "query_id": 152666}
+{"query": "యునైటెడ్ స్టేట్స్ ఎన్ని యుద్ధాలలో పాల్గొంది", "language": "te", "query_type": "NUMERIC", "eng_query": "how many wars has the united states been in", "query_id": 299548}
+{"query": "హైట్ జీవాకు రిసార్ట్ ఫీజు ఉందా?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "does the hyatt ziva have a resort fee", "query_id": 172600}
+{"query": "హిల్లరీ క్లింటన్ ఎంత ప్రజాదరణ పొందింది", "language": "te", "query_type": "NUMERIC", "eng_query": "how popular is hillary clinton", "query_id": 338016}
+{"query": "మ్యాక్ డేవిస్ యొక్క వయస్సు", "language": "te", "query_type": "NUMERIC", "eng_query": "age of mac davis", "query_id": 1060054}
+{"query": "ఆకలిని పెంచే ఆహారాలు", "language": "te", "query_type": "ENTITY", "eng_query": "foods that enhance appetite", "query_id": 189359}
+{"query": "17వ తేదీన రీసైక్లింగ్ చేయడం", "language": "te", "query_type": "DESCRIPTION", "eng_query": "can recycling on 17m", "query_id": 72971}
+{"query": "సారూప్య ఆకృతుల ఉపరితల వైశాల్యాన్ని ఎలా కనుగొనాలి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how to find surface area of similar shapes", "query_id": 359151}
+{"query": "టిన్నిటస్‌ను తగ్గించగల సప్లిమెంట్లు", "language": "te", "query_type": "ENTITY", "eng_query": "supplements that can lessen tinnitus", "query_id": 1090320}
+{"query": "అగ్నిపర్వతాలు ఎలా కాలుష్యాన్ని కలిగిస్తాయో వివరించండి.", "language": "te", "query_type": "DESCRIPTION", "eng_query": "explain how volcanoes causes pollution", "query_id": 183727}
+{"query": "బాబ్ మార్షల్ అడవి ప్రాంతం ఎంత పెద్దదిగా ఉంటుంది", "language": "te", "query_type": "NUMERIC", "eng_query": "how large is the bob marshall wilderness area", "query_id": 238254}
+{"query": "క్యూబ్ పసుపు క్రాస్‌ను పరిష్కరించడానికి చివరి దశ", "language": "te", "query_type": "DESCRIPTION", "eng_query": "final step to solva a cube yellow cross", "query_id": 186908}
+{"query": "ఇరిలాండ్‌లో ఎంతమంది జ్యూరీ సభ్యులు కోపంతో జ్యూరీలో కూర్చుంటారు", "language": "te", "query_type": "NUMERIC", "eng_query": "how many jurors sit on the jury in ireland", "query_id": 286823}
+{"query": "నా జీవితంలోని వెలుగుకు మరో పదం", "language": "te", "query_type": "DESCRIPTION", "eng_query": "another word for light of my life", "query_id": 19130}
+{"query": "నా సమ్‌సంగ్ ఎస్6కి మ్యూజిక్ బదిలీ చేయడానికి హాట్", "language": "te", "query_type": "DESCRIPTION", "eng_query": "hot to transfer music to my samsung s6", "query_id": 205809}
+{"query": "కంపెనీ ఆర్థిక వివరాలు: ప్రస్తుత నిష్పత్తిని వివరించండి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "company financials: explain current ratio", "query_id": 1060050}
+{"query": "అధ్యక్షుడు క్లింటన్ ఇంపీచ్ చేశారా?", "language": "te", "query_type": "PERSON", "eng_query": "did president clinton impeached", "query_id": 144815}
+{"query": "ఎలా ఎటిజి మూత్ర పరీక్షను పాస్ చేయాలి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how to pass an etg urine test", "query_id": 372039}
+{"query": "కాల్‌ఫైర్ సగటు ఆదాయ ప్రణాళిక సమీక్షలు", "language": "te", "query_type": "NUMERIC", "eng_query": "calfire average revenue plan reviews", "query_id": 58793}
+{"query": "రాజకీయ నియోఫైట్‌ను నిర్వచించండి.", "language": "te", "query_type": "DESCRIPTION", "eng_query": "define political neophyte.", "query_id": 125498}
+{"query": "అణచివేసిన అర్థం", "language": "te", "query_type": "DESCRIPTION", "eng_query": "suppressed meaning", "query_id": 1090319}
+{"query": "నేను ఎన్ని ఆర్లో కెమెరాలను జోడించగలను", "language": "te", "query_type": "NUMERIC", "eng_query": "how many arlo cameras can i add", "query_id": 274894}
+{"query": "ఒక ప్రయాణం తర్వాత ఎలా పరిశీలించాలి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how after should a per trip be inspected be conducted", "query_id": 207039}
+{"query": "సగటు బోధనా జీతం కెనడా", "language": "te", "query_type": "NUMERIC", "eng_query": "average teaching salary canada", "query_id": 44571}
+{"query": "తలనొప్పి అనేది వైరస్ యొక్క ఒక రూపంగా ఉంటుందా?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "are headaches a form of a virus?", "query_id": 22830}
+{"query": "ఏ సమయంలో ఆసుపత్రులు దావా వేస్తాయి", "language": "te", "query_type": "LOCATION", "eng_query": "at what point do hospitals sue", "query_id": 28809}
+{"query": "బెట్స్ అంటే ఏమిటి?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "what is betts", "query_id": 1060040}
+{"query": "మధుమేహం వల్ల కలిగే రెటీనా సిర మూసుకుపోవడం అనేది ఏమిటి?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "are retinal vein occlusions caused by diabetes?", "query_id": 24674}
+{"query": "అండాశయం ఉద్రేకం తర్వాత ఎంతకాలం అంటుకట్టడం", "language": "te", "query_type": "NUMERIC", "eng_query": "how long is implantation after ovulation", "query_id": 263891}
+{"query": "హిప్పా కంప్లయింట్ ఫైల్ నిల్వ", "language": "te", "query_type": "DESCRIPTION", "eng_query": "hipaa compliant file storage", "query_id": 203430}
+{"query": "నర్సింగ్ హోమ్ యొక్క సగటు నెలవారీ ఖర్చు", "language": "te", "query_type": "NUMERIC", "eng_query": "average monthly cost nursing home", "query_id": 38973}
+{"query": "ముడుచుకుపోవడానికి సహాయపడే ఆహారాలు", "language": "te", "query_type": "ENTITY", "eng_query": "foods that help cramps", "query_id": 189467}
+{"query": "సుప్రముండనే అంటే", "language": "te", "query_type": "DESCRIPTION", "eng_query": "supramundane meaning", "query_id": 1090318}
+{"query": "పాత్రల్లో విస్తృత బీన్స్‌ను ఎలా నాటాలి యూట్యూబ్", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how to plant out broad beans in pots youtube", "query_id": 372498}
+{"query": "అమెరికన్ విప్లవం తరువాత బానిసత్వాన్ని చట్టవిరుద్ధం చేసిన మొదటి రాష్ట్రం", "language": "te", "query_type": "LOCATION", "eng_query": "following the american revolution the first state to make slavery illegal was", "query_id": 188391}
+{"query": "వివిధ బ్రాండ్ల అడ్డెరాల్", "language": "te", "query_type": "ENTITY", "eng_query": "different brands of adderall", "query_id": 149686}
+{"query": "టర్కీ రొయ్యల రొమ్ము టెండర్లోయిన్ వంట ఉష్ణోగ్రత", "language": "te", "query_type": "NUMERIC", "eng_query": "cooking temperature turkey breast tenderloin", "query_id": 99375}
+{"query": "బెవర్లీ కొండలు ఏమిటి?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "what is beverly hills md", "query_id": 1060039}
+{"query": "షెడ్యూల్ 2 ప్రిస్క్రిప్షన్ ఎంతకాలం చెల్లుతుంది", "language": "te", "query_type": "NUMERIC", "eng_query": "how long is a schedule 2 prescription valid", "query_id": 262841}
+{"query": "పారాబొలా యొక్క నిర్వచనం", "language": "te", "query_type": "DESCRIPTION", "eng_query": "definition of a   parabola", "query_id": 131554}
+{"query": "సియర్స్ క్రెడిట్ కార్డులతో సియర్స్ గిఫ్ట్ కార్డ్‌లను కొనుగోలు చేయవచ్చా?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "can you buy sears gift cards with sears credit cards", "query_id": 76216}
+{"query": "రోలింగ్ థండర్ ఆపరేషన్ జరుగుతున్నప్పుడు అమెరికా ఎంతవరకు పాల్గొంది?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how involved did america get during operation rolling thunder", "query_id": 235926}
+{"query": "ఆండ్రాయిడ్ నుండి ఐఫోన్‌కి యాప్‌లను బదిలీ చేయగలనా?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "can i transfer apps from android to iphone", "query_id": 69821}
+{"query": "అడిసన్ వ్యాధి డిహెచ్ఏ సప్లిమెంట్ సిఫార్సు చేయబడిన మోతాదు ప్రత్యామ్నాయం", "language": "te", "query_type": "ENTITY", "eng_query": "addison disease dhea supplement recommended dosage replacement men", "query_id": 1090317}
+{"query": "మీరు మీ లైసెన్స్ నంబర్‌ను రిజ్యూమేలో పెట్టారా?", "language": "te", "query_type": "NUMERIC", "eng_query": "do you put your license number on resume", "query_id": 161144}
+{"query": "యూట్యూబర్లు ఎంత సంపాదిస్తారో", "language": "te", "query_type": "NUMERIC", "eng_query": "about how much do youtubers make", "query_id": 9956}
+{"query": "ఉత్పత్తి పెరిగే కొద్దీ ప్రతి వస్తువు యొక్క సగటు ధరను తగ్గించడం", "language": "te", "query_type": "NUMERIC", "eng_query": "decreasing the average cost of each good as output increases", "query_id": 116362}
+{"query": "ప్రత్యేక జాబితా ఒప్పంద నిర్వచనం పెన్సిల్వేనియా", "language": "te", "query_type": "DESCRIPTION", "eng_query": "exclusive listing agreement definition pennsylvania", "query_id": 183181}
+{"query": "బేయర్స్ వాస్కులైటిస్ అంటే ఏమిటి?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "what is beyer's vasculitis", "query_id": 1060026}
+{"query": "సముద్ర రేవు నుండి చేపలు పట్టడానికి మీకు లైసెన్స్ అవసరమా?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "do you need a license to fish from a sea pier", "query_id": 160734}
+{"query": "వైన్ డ్రాక్స్ అనేది వైన్ తాగడం అని అర్థం.", "language": "te", "query_type": "DESCRIPTION", "eng_query": "define whined", "query_id": 129145}
+{"query": "ఫ్రెంచ్‌లో స్మూతీ ఎలా చెప్పాలి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how to say smoothie in french", "query_id": 378406}
+{"query": "నిమిషాలతో అక్షాంశం మరియు రేఖాంశాన్ని ఎలా చదవాలి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how to read latitude and longitude with minutes", "query_id": 374799}
+{"query": "ఒక పివోట్ సర్కిల్‌లో ఎన్ని ఎకరాలు ఉన్నాయి", "language": "te", "query_type": "NUMERIC", "eng_query": "how many acres in a pivot circle", "query_id": 274282}
+{"query": "2016లో కడుపు పురుగు ఎంతకాలం ఉంటుంది", "language": "te", "query_type": "NUMERIC", "eng_query": "2016 how long does the stomach bug last", "query_id": 1073}
+{"query": "తేలికపాటి అలలు గాలి గుండా వేగంగా ప్రయాణిస్తాయి.", "language": "te", "query_type": "DESCRIPTION", "eng_query": "do light waves travel faster through air", "query_id": 1101283}
+{"query": "పిలోనిడల్ సిస్ట్‌ను శస్త్రచికిత్స ద్వారా తొలగించడం", "language": "te", "query_type": "NUMERIC", "eng_query": "surgery price removal of pilonidal cyst", "query_id": 1090316}
+{"query": "కథలు ఐదు భాషా కార్యకలాపాలను పీడీఎఫ్‌లుగా అభివృద్ధి చేయడానికి ఎలా సహాయపడతాయి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how stories help to develop five language activities pdf", "query_id": 340134}
+{"query": "ఆసియాలోని అతిపెద్ద జీవిత బీమా సంస్థ", "language": "te", "query_type": "PERSON", "eng_query": "biggest life insurance company in asia", "query_id": 53217}
+{"query": "రేట్ చేయబడినది కంటే మించినది ఏమిటి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "what is beyond rated", "query_id": 1060016}
+{"query": "ఉత్పరివర్తనలు క్షీణతకు ఉదాహరణగా ఎలా ఉన్నాయి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how are mutations an example of degeneration", "query_id": 207617}
+{"query": "మైగ్రేన్లు వల్ల వాపు వస్తుందా?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "can migraines cause bloating", "query_id": 71393}
+{"query": "మీరు సౌందర్య సాధనాలు మరియు పెంపుడు జంతువులను ఎలా పొందుతారు?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how do you get cosmetics and pets d3", "query_id": 222349}
+{"query": "ఎలాంటి సమయంలో మీరు ఎహార్మోనీపై స్పందించాలి", "language": "te", "query_type": "NUMERIC", "eng_query": "how long should you wait to respond on eharmony", "query_id": 267673}
+{"query": "ఖర్చుల కుండీలను నిర్వచించండి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "define expense pools", "query_id": 121272}
+{"query": "మీరు నిద్రపోవడానికి ముందు మంచం మీద పడుకోవడం నిద్రను ప్రభావితం చేస్తుందా?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "does laying in bed before you sleep affect sleep", "query_id": 168181}
+{"query": "నిర్వచనం వేగవంతమైన మొక్కల పెరుగుదల", "language": "te", "query_type": "DESCRIPTION", "eng_query": "definition fast plant growth", "query_id": 130725}
+{"query": "దద్దురు టీకాలు పని చేస్తాయా?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "do shingles vaccines work", "query_id": 158925}
+{"query": "nbfc మరియు bifc మధ్య వ్యత్యాసం", "language": "te", "query_type": "DESCRIPTION", "eng_query": "difference between nbfc and bifc", "query_id": 148050}
+{"query": "సీటు కుషన్ ఫోమ్‌ని మీరు కడిగివేయగలరా?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "can you wash seat cushion foam", "query_id": 81022}
+{"query": "వ్యక్తులపై జూదం వ్యసనం ప్రభావాలు", "language": "te", "query_type": "DESCRIPTION", "eng_query": "gambling addiction effects on individuals", "query_id": 1100331}
+{"query": "ఓవెన్‌లో పంది మాంసం లోయిన్ స్టీక్‌లను ఎలా వండాలి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how to cook pork loin steaks in oven", "query_id": 352640}
+{"query": "నర్సు కావడానికి కొల్లాజ్‌కు వెళ్లాలా?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "do i need to go to collage to become a rn nurse", "query_id": 157068}
+{"query": "రాబోయే విచారణల గురించి ఎలా తెలియజేయాలి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how to notify of upcoming hearings", "query_id": 371224}
+{"query": "ఎలా టెక్స్చర్డ్ జుట్టును పొడవుగా పెంచాలి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how to grow textured hair long", "query_id": 363816}
+{"query": "ఆస్ఫాల్ట్ డ్రైవ్‌వే ధర 216", "language": "te", "query_type": "NUMERIC", "eng_query": "asphalt driveway cost 216", "query_id": 27450}
+{"query": "పిల్లులపై టేప్‌వర్మ్ ములము పనిచేస్తుందా?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "does tapeworm ointment work on cats", "query_id": 172056}
+{"query": "పాఠశాల భోజనశాల కార్మికులకు ఎంత చెల్లిస్తారు?", "language": "te", "query_type": "NUMERIC", "eng_query": "how much do school lunchroom workers get paid?", "query_id": 307227}
+{"query": "హమ్ద్ మరియు నాట్ మధ్య వ్యత్యాసం", "language": "te", "query_type": "DESCRIPTION", "eng_query": "difference between hamd and naat", "query_id": 147503}
+{"query": "సుసాన్ సరండాన్ కప్ పరిమాణం", "language": "te", "query_type": "NUMERIC", "eng_query": "susan sarandon cup size", "query_id": 1090312}
+{"query": "ట్యూషన్ గాస్టన్ కళాశాల ఖర్చు", "language": "te", "query_type": "NUMERIC", "eng_query": "cost of tuition gaston college", "query_id": 107697}
+{"query": "సైనసిటిస్‌ను అజిత్రోమైసిన్ ఎంతసేపు పని చేస్తుంది", "language": "te", "query_type": "NUMERIC", "eng_query": "how long does it take for azithromycin to work sinusitis", "query_id": 253510}
+{"query": "సాధారణ స్థాయి కంటే మించినది ఏమిటి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "what is beyond the pale mean", "query_id": 1060015}
+{"query": "సెమికోలన్ నిర్వచనం", "language": "te", "query_type": "DESCRIPTION", "eng_query": "definition of a semicolon", "query_id": 131840}
+{"query": "ఇన్‌స్టాల్‌కు అప్లికేషన్ ధర", "language": "te", "query_type": "NUMERIC", "eng_query": "app cost per install", "query_id": 19972}
+{"query": "తిన్న తర్వాత పరుగెత్తడానికి ఎంతసేపు వేచి ఉండాలి", "language": "te", "query_type": "NUMERIC", "eng_query": "how long to wait before running after eating", "query_id": 272481}
+{"query": "వాటర్‌పిక్ గమ్ తగ్గుదలకు కారణమవుతుందా?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "can waterpik cause gum recession", "query_id": 75497}
+{"query": "గోడ నుండి ఎన్ని యాంప్‌లు బయటకు వస్తాయి", "language": "te", "query_type": "NUMERIC", "eng_query": "how many amps come out of the wall", "query_id": 274753}
+{"query": "నిర్వచనం జిఎస్ఎం మందం", "language": "te", "query_type": "DESCRIPTION", "eng_query": "definition gsm thickness", "query_id": 131143}
+{"query": "అత్యధిక చెల్లింపు చేసే అండర్ గ్రాడ్యుయేట్ డిగ్రీలు", "language": "te", "query_type": "DESCRIPTION", "eng_query": "highest paying undergraduate degrees", "query_id": 202680}
+{"query": "అల్లాహ్ అక్బర్ నిర్వచనం", "language": "te", "query_type": "DESCRIPTION", "eng_query": "allah akbar definition", "query_id": 15636}
+{"query": "xyz నిద్రలేమికి కారణమవుతుందా?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "does xyzal cause insomnia", "query_id": 174257}
+{"query": "స్థిరమైన నిర్వచన చట్టం", "language": "te", "query_type": "DESCRIPTION", "eng_query": "sustained definition law", "query_id": 1090311}
+{"query": "బిజిఎ అంటే ఏమిటి?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "what is bga in", "query_id": 1060013}
+{"query": "గ్రాడ్యుయేషన్ కేక్ పాప్స్‌లో టోపీ ఎలా చేయాలి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how to make hat on graduation cake pops", "query_id": 369007}
+{"query": "కళ్ళలో ప్రకాశవంతమైన కాంతి లక్షణాలు", "language": "te", "query_type": "ENTITY", "eng_query": "bright light in eyes symptoms", "query_id": 56353}
+{"query": "జోవాన్ని మైగట్ చనిపోయాడు", "language": "te", "query_type": "DESCRIPTION", "eng_query": "did  jovanni  maigut die", "query_id": 143144}
+{"query": "ప్రత్యక్ష కారణ నిర్వచనం", "language": "te", "query_type": "DESCRIPTION", "eng_query": "direct cause definition", "query_id": 151712}
+{"query": "రక్తంలో చక్కెర 240", "language": "te", "query_type": "NUMERIC", "eng_query": "blood sugar is 240", "query_id": 54625}
+{"query": "పాఠశాలలు దీర్ఘకాలిక సబ్ లైసెన్స్ కలిగిన వారిని నియమించుకోవచ్చు.", "language": "te", "query_type": "DESCRIPTION", "eng_query": "can schools hire someone with a long term sub license", "query_id": 73193}
+{"query": "2005 పోంటియాక్ వైబ్‌లో యాంటీ లాక్ బ్రేక్‌లు ఉన్నాయా?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "does 2005 pontiac vibe have anti lock brakes", "query_id": 161758}
+{"query": "హోలిజం అంటే", "language": "te", "query_type": "DESCRIPTION", "eng_query": "holism meaning", "query_id": 204175}
+{"query": "కీళ్ళనొప్పి ఉన్న కుక్కను ఎలా చూసుకోవాలి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how to look after a dog with arthritis", "query_id": 366999}
+{"query": "సూత్ర రేటు గణన", "language": "te", "query_type": "NUMERIC", "eng_query": "suta rate calculation", "query_id": 1090310}
+{"query": "భూనో అంటే ఏమిటి?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "what is bhuno", "query_id": 1060012}
+{"query": "హెప్ బి వ్యాక్సిన్ ఎంతకాలం పనిచేస్తుంది", "language": "te", "query_type": "NUMERIC", "eng_query": "how long is hep b vaccine effective", "query_id": 263858}
+{"query": "పౌరులతో పోలిస్తే నేర రేట్లు మమ్మల్ని చట్టవిరుద్ధమైన వలసదారులుగా చేస్తాయి.", "language": "te", "query_type": "NUMERIC", "eng_query": "crime rates us illegal immigrants compared to citizens", "query_id": 112748}
+{"query": "నైతిక అధికారం యొక్క నిర్వచనం", "language": "te", "query_type": "DESCRIPTION", "eng_query": "definition of moral authority", "query_id": 136380}
+{"query": "ఎన్‌సీఎఫ్‌ఎల్ మరియు ఎంఎల్‌బి కలిసి ఎంత సంపాదిస్తాయి", "language": "te", "query_type": "NUMERIC", "eng_query": "how much does the nfl nba and mlb make together", "query_id": 318695}
+{"query": "సైన్యాన్ని నిర్వచించండి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "define militia", "query_id": 124035}
+{"query": "మ్యాక్‌లో ఇమెయిల్ ఖాతాను ఎలా సవరించాలి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how to edit email account on mac", "query_id": 356911}
+{"query": "అయాయా సందేశం ఐచ్ఛిక అభివాదాన్ని రద్దు చేస్తుంది.", "language": "te", "query_type": "DESCRIPTION", "eng_query": "ayaya message cancel optional greeting", "query_id": 47934}
+{"query": "వాటాదారులు ఎలా ఓటు వేస్తారు", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how do shareholders vote", "query_id": 220241}
+{"query": "మీరు ఇటాలియన్‌లో ఉత్తమ సంబంధాలు చెప్పడం ఎలా?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how do you say best regards in italian", "query_id": 223811}
+{"query": "మీరు మీ పన్నులపై ఎంత డేకేర్‌ను ప్రతిపాదించవచ్చు", "language": "te", "query_type": "NUMERIC", "eng_query": "how much daycare can you claim on your taxes", "query_id": 304119}
+{"query": "బిబ్ లెట్యూస్ ర్యాప్ అంటే ఏమిటి?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "what is bib lettuce wrap", "query_id": 1060011}
+{"query": "బోస్టన్ సెల్టిక్స్ ఎన్‌బిఏ ఛాంపియన్‌షిప్‌ల సంఖ్య", "language": "te", "query_type": "NUMERIC", "eng_query": "boston celtics number of nba championships", "query_id": 1090309}
+{"query": "మీరు సమాధానాలతో పవర్‌పాయింట్ ప్రెజెంటేషన్‌ను ఎలా చేస్తారు?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how do you do a powerpoint presentation with answers", "query_id": 221862}
+{"query": "ఇప్పటికే ఉన్న తనఖాలపై రుణ విధానాన్ని నీకు ఇవ్వగలనా?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "can i issue a loan policy on an existing mortgage", "query_id": 69194}
+{"query": "ఆరోగ్య సంరక్షణ కోసం కెనడియన్లు ఎంత పన్నులు చెల్లిస్తారు?", "language": "te", "query_type": "NUMERIC", "eng_query": "how much do canadians pay in taxes for health care", "query_id": 304990}
+{"query": "తుంటి సమస్యలు కాలి నొప్పికి కారణమవుతాయా?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "can hip problems cause leg pain", "query_id": 68083}
+{"query": "కెన్ గబాపెంటిన్ న్యూరోపతిని చికిత్స చేయగలదు", "language": "te", "query_type": "DESCRIPTION", "eng_query": "can gabapentin treat neuropathy", "query_id": 67534}
+{"query": "మెయిల్ విండో 10ని ఎలా దిగుమతి చేయాలి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how to import mail window 10", "query_id": 364630}
+{"query": "ఎల్‌విఎన్‌గా ఎలా మారాలి", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how to become an lvn", "query_id": 345605}
+{"query": "ఏనుగులు నిజమైన జంతువులా?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "Are Unicorns Real Animals", "query_id": 2042}
+{"query": "డిప్లో అనే పదానికి అర్థం", "language": "te", "query_type": "DESCRIPTION", "eng_query": "diplo term meaning", "query_id": 151682}
+{"query": "మిస్సిస్సిప్పికి కంపెనీ పన్ను రేట్లు", "language": "te", "query_type": "NUMERIC", "eng_query": "company tax rates for mississippi", "query_id": 1060010}
+{"query": "ఈ సుగంధ ద్రవ్యం ఎలాంటి వాసన కలిగి ఉంది?", "language": "te", "query_type": "ENTITY", "eng_query": "cloey what kind of smell is this perfume", "query_id": 93461}
+{"query": "సట్టన్ బ్యాంక్ ఫోన్ నంబర్", "language": "te", "query_type": "NUMERIC", "eng_query": "sutton bank phone number", "query_id": 1090308}
+{"query": "వృద్ధులలో మూత్రం రక్తం కారణాలు", "language": "te", "query_type": "DESCRIPTION", "eng_query": "causes of urine blood in elderly", "query_id": 88913}
+{"query": "సామాజిక కార్యకర్త మనస్తత్వవేత్త కావచ్చేయేమో", "language": "te", "query_type": "DESCRIPTION", "eng_query": "can a social worker become a psychologist", "query_id": 63240}
+{"query": "కస్టడీ ఆర్డర్ యొక్క ధృవీకరించబడిన కాపీని ఎలా పొందుతాను?", "language": "te", "query_type": "DESCRIPTION", "eng_query": "how do i get a certified copy of a custody order", "query_id": 218159}
+{"query": "యునైటెడ్ స్టేట్స్‌లో వాసోప్రెసిన్ ఖర్చు", "language": "te", "query_type": "NUMERIC", "eng_query": "cost of vasopressin in the united states", "query_id": 107855}

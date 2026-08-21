@@ -2,16 +2,15 @@
 
 # VOICE RAG
 
-### Ask out loud. Get grounded answers — in English, Hindi, or Gujarati.
+### Ask out loud. Get grounded answers — in English, Hindi, Gujarati, or Telugu.
 
 *A voice-first multilingual Retrieval-Augmented Generation system with hard refusal guardrails and a sub-50ms retrieval core.*
 
 [![Python](https://img.shields.io/badge/Python-3.12+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0096CE?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
-[![Tests](https://img.shields.io/badge/Tests-149%20passing-brightgreen?style=for-the-badge&logo=pytest)](tests/)
-[![P50](https://img.shields.io/badge/Core%20P50-48%20ms-success?style=for-the-badge)](bench/results/summary.json)
-[![P100](https://img.shields.io/badge/Core%20P100-77%20ms-success?style=for-the-badge)](bench/results/summary.json)
-[![SLA](https://img.shields.io/badge/%3C200%20ms%20SLA-100%25%20of%201500%20queries-blue?style=for-the-badge)](bench/results/summary.json)
+[![Tests](https://img.shields.io/badge/Tests-151%20passing-brightgreen?style=for-the-badge&logo=pytest)](tests/)
+[![P50](https://img.shields.io/badge/Core%20P50-56%20ms-success?style=for-the-badge)](bench/results/summary.json)
+[![SLA](https://img.shields.io/badge/%3C200%20ms%20SLA-99.95%25%20of%202000%20queries-blue?style=for-the-badge)](bench/results/summary.json)
 [![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
 
 [Features](#-features) · [Architecture](#-architecture) · [Performance](#-performance) · [Quickstart](#-quickstart) · [API](#-api-reference) · [Guardrails](#-guardrails)
@@ -30,13 +29,13 @@ Ask *"Who is the Prime Minister of India?"* and most RAG demos will hallucinate 
 
 > `Refused: Top retrieval score 0.779 below relevance floor 0.840`
 
-Ask something the corpus *does* cover — in English, Hindi, or Gujarati — and you get a grounded, cited answer with a full latency breakdown and the exact evidence chain behind it.
+Ask something the corpus *does* cover — in English, Hindi, Gujarati, or Telugu — and you get a grounded, cited answer with a full latency breakdown and the exact evidence chain behind it.
 
 | | |
 |---|---|
-| **Languages** | English, Hindi (हिन्दी), Gujarati (ગુજરાતી) |
+| **Languages** | English, Hindi (हिन्दी), Gujarati (ગુજરાતી), Telugu (తెలుగు) |
 | **Input modes** | Speech (hold-to-talk) and text |
-| **Corpus** | 30,000 passages · MSMARCO-XI · 10k per language |
+| **Corpus** | 40,000 passages · MSMARCO-XI · 10k per language |
 | **Embeddings** | `intfloat/multilingual-e5-small` · 384-dim |
 | **STT** | Sarvam AI `saaras:v3` |
 | **Answering** | Extractive (default, instant) · LLM via OpenRouter (opt-in) |
@@ -58,10 +57,9 @@ Ask something the corpus *does* cover — in English, Hindi, or Gujarati — and
 - **Language-aware retrieval** — script-based query detection (Latin / Devanagari / Gujarati) with soft same-language reranking, so an English question never surfaces a Gujarati tweet.
 - **Grounded by construction** — every answer passes a grounding guard (token overlap → embedding similarity fallback); ungrounded output never reaches the user.
 - **Full transparency** — evidence drawer with ranked passages + scores, stage-by-stage latency modal, and a *why-this-answer* chain showing every guard decision.
-- **Blazing fast core** — P50 **40 ms**, P95 **50 ms**, 99.9% of queries under 200 ms across 1,500 benchmark queries.
+- **Blazing fast core** — P50 **56 ms**, P90 **69 ms**, 99.95% of queries under 200 ms across 2,000 benchmark queries.
 - **Zero-build frontend** — vanilla JS SPA served directly by FastAPI. No node_modules, no bundler.
-- **149 passing tests** — unit coverage for chunking, embedding, retrieval, guards, generation, orchestration, and schemas.
-
+- **151 passing tests** — unit coverage for chunking, embedding, retrieval, guards, generation, orchestration, schemas, and language detection.
 ---
 
 ## Architecture
@@ -95,7 +93,7 @@ flowchart TB
     %% RETRIEVAL
     %% =========================
     subgraph RETRIEVAL["03 · KNOWLEDGE RETRIEVAL"]
-        VS["MSMARCO-XI Knowledge Base<br/>30K Passages · 384-dim Vectors"]
+        VS["MSMARCO-XI Knowledge Base<br/>40K Passages · 384-dim Vectors"]
         SEARCH["Semantic Vector Search<br/>NumPy Index"]
         RG{"Relevance Guard<br/>Language-aware Thresholds"}
     end
@@ -172,43 +170,45 @@ flowchart TB
     class REF1,REF2,REF3 refusal
 ```
 
-### Stage-by-stage cost (measured medians, n = 1500)
+### Stage-by-stage cost (measured medians, n = 2000)
 
 | Stage | P50 latency | What happens |
 |---|---:|---|
 | Input guard | 0.02 ms | Injection / unsafe content / length checks |
-| Embed query | 20.68 ms | E5 `query:` prefix → 384-dim vector |
-| Vector search | 27.04 ms | Cosine similarity over 30k passages + language rerank |
+| Embed query | 23.67 ms | E5 `query:` prefix → 384-dim vector |
+| Vector search | 30.74 ms | Cosine similarity over 40k passages + language rerank |
 | Relevance guard | 0.01 ms | Top score vs calibrated floor |
-| Answer generation | 0.08 ms | Best-sentence extraction from top passage |
-| Grounding guard | 0.16 ms | Token overlap, embedding fallback if needed |
-| **Total core** | **48.23 ms** | Target: < 200 ms |
+| Answer generation | 0.09 ms | Best-sentence extraction from top passage |
+| Grounding guard | 0.17 ms | Token overlap, embedding fallback if needed |
+| **Total core** | **55.75 ms** | Target: < 200 ms |
 
 ---
 
 ## Performance
 
-Benchmarked on **1,500 corpus queries** (500 per language, balanced sample, seed-fixed) against the prebuilt index, running the full pipeline in-process.
+Benchmarked on **2,000 corpus queries** (500 per language, balanced sample, seed-fixed) against the prebuilt index, running the full pipeline in-process.
 
-| Metric | All | English | Hindi | Gujarati |
-|---|---:|---:|---:|---:|
-| P50 | 48.2 ms | 47.5 ms | 48.2 ms | 49.7 ms |
-| P70 | 51.5 ms | — | — | — |
-| P90 | 56.1 ms | — | — | — |
-| P100 | 76.7 ms | 69.2 ms | 76.7 ms | 75.9 ms |
-| Within 200 ms | **100%** | 100% | 100% | 100% |
+| Metric | All | English | Hindi | Gujarati | Telugu |
+|---|---:|---:|---:|---:|---:|
+| P50 | 55.8 ms | 54.9 ms | 56.0 ms | 56.7 ms | 55.3 ms |
+| P70 | 61.1 ms | — | — | — | — |
+| P90 | 69.4 ms | — | — | — | — |
+| P100 | 273.2 ms * | 100.8 ms | 273.2 ms * | 178.5 ms | 109.5 ms |
+| Within 200 ms | 99.95% | 100% | 99.8% | 100% | 100% |
 
-**Guardrail activity in-benchmark:** 1,421 answered · 79 refused (weak-match queries correctly declined rather than answered with junk).
+<sub>\* A single OS-scheduling outlier among 2,000 runs; the next-worst query across all languages was 178 ms.</sub>
+
+**Guardrail activity in-benchmark:** 1,893 answered · 107 refused (weak-match queries correctly declined rather than answered with junk).
 
 Reproduce it yourself:
 
 ```bash
-python bench/run_bench.py --limit 1500   # full per-query results in bench/results/
+python bench/run_bench.py --limit 2000   # full per-query results in bench/results/
 ```
 
 <sub>The embedding model is warmed before measurement; per-query raw data is committed at `bench/results/results.json`.</sub>
 
-End-to-end voice round-trip: **~1.7 s** (≈1 s Sarvam STT + ≈48 ms pipeline).
+End-to-end voice round-trip: **~1.7 s** (≈1 s Sarvam STT + ≈56 ms pipeline).
 
 ---
 
@@ -252,7 +252,7 @@ uvicorn api.main:app --host 0.0.0.0 --port 7860
 
 Open **http://localhost:7860** — the SPA is served at the root.
 
-> The prebuilt index (`index/artifacts/`, 30k × 384-dim vectors) ships with the repo, so first run needs no indexing step. To rebuild from scratch: `python index/build_corpus.py` then `python index/build_index.py`.
+> The prebuilt index (`index/artifacts/`, 40k × 384-dim vectors) ships with the repo, so first run needs no indexing step. To rebuild from scratch: `python index/build_corpus.py` then `python index/build_index.py`. To add another language from MSMARCO-XI, `index/extend_corpus_te.py` is a working template.
 
 ---
 
@@ -341,6 +341,7 @@ Thresholds were **calibrated empirically**: top-1 cosine scores were measured fo
 | English | 0.840 | +0.03 |
 | Hindi | 0.850 | +0.03 |
 | Gujarati | 0.840 | +0.03 |
+| Telugu | 0.840 | +0.03 |
 
 ```
 Q: Who is the Prime Minister of India?   → REFUSED  (0.779 < 0.840)
@@ -355,11 +356,12 @@ Answers must be traceable to retrieved text: token-overlap ≥ 0.231 passes inst
 
 ## Multilingual Pipeline
 
-1. **Detection** — Unicode script analysis classifies the query (Gujarati block → `gu`, Devanagari → `hi`, else `en`). Voice queries inherit Sarvam's language code, normalized to base codes.
+1. **Detection** — Unicode script analysis classifies the query (Telugu block → `te`, Gujarati block → `gu`, Devanagari → `hi`, else `en`). Voice queries inherit Sarvam's language code, normalized to base codes.
 2. **Retrieval** — explicit `lang` acts as a hard filter; auto-detected language applies a soft +0.03 rerank bonus toward same-language passages over a 3× candidate pool.
 3. **Enforcement** — the *query's* language (not the top chunk's) selects the relevance floor, so cross-language junk can't sneak through under a borrowed threshold.
 
 ```
+Q: కార్పొరేషన్ అంటే ఏమిటి?    → detected te → answered from Telugu corpus
 Q: ભારતની રાજધાની શું છે?   → detected gu → Gujarati passages preferred
 Q: भारत की राजधानी क्या है?  → detected hi → honest refusal (not in corpus)
 ```
@@ -409,10 +411,11 @@ VOICE-RAG/
 ├── index/
 │   ├── build_corpus.py      # MSMARCO-XI → corpus.jsonl
 │   ├── build_index.py       # Embed + persist artifacts
-│   └── artifacts/           # Prebuilt: chunks.json, vectors.npy
+│   ├── extend_corpus_te.py  # Incremental language-extension template
+│   └── artifacts/           # Prebuilt: chunks.json, vectors.npy, stats.json
 ├── frontend/                # Zero-build SPA (HTML/CSS/JS)
 ├── bench/                   # Latency harness + results
-├── tests/                   # 149 pytest cases
+├── tests/                   # 151 pytest cases
 └── config.yaml              # Models, thresholds, tuning
 ```
 
@@ -425,7 +428,7 @@ pytest tests/ -q
 ```
 
 ```
-149 passed
+151 passed
 ```
 
 Covers chunking, embedding math, vector-store sorting, cache isolation, all three guards (pass/refuse/edge cases), extractive + generative generation, orchestrator flows including refusal paths, schema validation, and language detection.

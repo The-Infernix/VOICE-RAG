@@ -88,7 +88,7 @@ class TestInputGuard:
         assert result.reason_code == "UNSUPPORTED_LANGUAGE"
 
     def test_supported_languages(self):
-        for lang in ("en", "hi", "gu"):
+        for lang in ("en", "hi", "gu", "te"):
             result = self.guard.check("Hello", lang=lang)
             assert result.passed is True
 

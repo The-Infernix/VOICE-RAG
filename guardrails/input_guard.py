@@ -54,7 +54,7 @@ class InputGuard:
                 message="Query contains potentially unsafe content",
             )
 
-        if lang and lang not in ("en", "hi", "gu"):
+        if lang and lang not in ("en", "hi", "gu", "te"):
             return GuardResult(
                 passed=False,
                 reason_code="UNSUPPORTED_LANGUAGE",

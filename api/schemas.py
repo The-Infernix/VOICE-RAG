@@ -16,6 +16,7 @@ class Language(str, Enum):
     ENGLISH = "en"
     HINDI = "hi"
     GUJARATI = "gu"
+    TELUGU = "te"
 
 
 class AskRequest(BaseModel):

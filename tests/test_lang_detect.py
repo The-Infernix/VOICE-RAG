@@ -12,6 +12,12 @@ class TestDetectQueryLanguage:
     def test_gujarati(self):
         assert detect_query_language("ભારતની રાજધાની શું છે?") == "gu"
 
+    def test_telugu(self):
+        assert detect_query_language("కార్పొరేషన్ అంటే ఏమిటి?") == "te"
+
+    def test_mixed_script_telugu_wins(self):
+        assert detect_query_language("hello కార్పొరేషన్") == "te"
+
     def test_empty(self):
         assert detect_query_language("") == "en"
         assert detect_query_language(None) == "en"

@@ -1,11 +1,12 @@
 {
   "strategy": "passage_native",
-  "total_chunks": 30000,
-  "total_embeddings": 30000,
+  "total_chunks": 39995,
+  "total_embeddings": 39995,
   "embedding_dim": 384,
   "languages": {
     "en": 10000,
     "hi": 10000,
-    "gu": 10000
+    "gu": 10000,
+    "te": 9995
   }
 }

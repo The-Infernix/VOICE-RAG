@@ -2,7 +2,7 @@ import httpx
 import os
 from typing import Optional, Tuple
 
-_SUPPORTED_LANGS = {"en", "hi", "gu"}
+_SUPPORTED_LANGS = {"en", "hi", "gu", "te"}
 
 
 def _normalize_lang(code: Optional[str], fallback: str = "en") -> str:
