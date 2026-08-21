@@ -189,6 +189,7 @@ if __name__ == "__main__":
 
     print("Loading model...")
     embedder = Embedder(CONFIG["embedding"]["model"])
+    embedder.embed_query("warmup")  # exclude one-time model load from measurements
     vector_store = NumpyVectorStore()
     vector_store.load(str(ARTIFACTS))
     retriever = Retriever(embedder, vector_store)

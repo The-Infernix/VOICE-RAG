@@ -9,7 +9,9 @@
 [![Python](https://img.shields.io/badge/Python-3.12+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0096CE?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
 [![Tests](https://img.shields.io/badge/Tests-149%20passing-brightgreen?style=for-the-badge&logo=pytest)](tests/)
-[![Latency](https://img.shields.io/badge/Core%20P50-40%20ms-success?style=for-the-badge)](bench/results/summary.json)
+[![P50](https://img.shields.io/badge/Core%20P50-48%20ms-success?style=for-the-badge)](bench/results/summary.json)
+[![P100](https://img.shields.io/badge/Core%20P100-77%20ms-success?style=for-the-badge)](bench/results/summary.json)
+[![SLA](https://img.shields.io/badge/%3C200%20ms%20SLA-100%25%20of%201500%20queries-blue?style=for-the-badge)](bench/results/summary.json)
 [![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
 
 [Features](#-features) · [Architecture](#-architecture) · [Performance](#-performance) · [Quickstart](#-quickstart) · [API](#-api-reference) · [Guardrails](#-guardrails)
@@ -97,30 +99,38 @@ flowchart TB
 | Stage | P50 latency | What happens |
 |---|---:|---|
 | Input guard | 0.02 ms | Injection / unsafe content / length checks |
-| Embed query | 16.96 ms | E5 `query:` prefix → 384-dim vector |
-| Vector search | 23.14 ms | Cosine similarity over 30k passages + language rerank |
+| Embed query | 20.68 ms | E5 `query:` prefix → 384-dim vector |
+| Vector search | 27.04 ms | Cosine similarity over 30k passages + language rerank |
 | Relevance guard | 0.01 ms | Top score vs calibrated floor |
-| Answer generation | 0.07 ms | Best-sentence extraction from top passage |
-| Grounding guard | 0.15 ms | Token overlap, embedding fallback if needed |
-| **Total core** | **40.12 ms** | Target: < 200 ms |
+| Answer generation | 0.08 ms | Best-sentence extraction from top passage |
+| Grounding guard | 0.16 ms | Token overlap, embedding fallback if needed |
+| **Total core** | **48.23 ms** | Target: < 200 ms |
 
 ---
 
 ## Performance
 
-Benchmarked on 1,500 corpus queries (500 per language) against the prebuilt index.
+Benchmarked on **1,500 corpus queries** (500 per language, balanced sample, seed-fixed) against the prebuilt index, running the full pipeline in-process.
 
 | Metric | All | English | Hindi | Gujarati |
 |---|---:|---:|---:|---:|
-| P50 | 40.1 ms | 38.9 ms | 40.2 ms | 41.5 ms |
-| P70 | 42.4 ms | 40.5 ms | 42.3 ms | 43.5 ms |
-| P90 | 46.8 ms | — | — | — |
-| P95 | 49.6 ms | — | — | — |
-| Within 200 ms | 99.9% | 100% | 100% | 99.8% |
+| P50 | 48.2 ms | 47.5 ms | 48.2 ms | 49.7 ms |
+| P70 | 51.5 ms | — | — | — |
+| P90 | 56.1 ms | — | — | — |
+| P100 | 76.7 ms | 69.2 ms | 76.7 ms | 75.9 ms |
+| Within 200 ms | **100%** | 100% | 100% | 100% |
 
-<sub>The single P100 outlier (21.7 s) is first-query model load; the model is now warmed at startup.</sub>
+**Guardrail activity in-benchmark:** 1,421 answered · 79 refused (weak-match queries correctly declined rather than answered with junk).
 
-End-to-end voice round-trip: **~1.7 s** (≈1 s Sarvam STT + ≈40 ms pipeline).
+Reproduce it yourself:
+
+```bash
+python bench/run_bench.py --limit 1500   # full per-query results in bench/results/
+```
+
+<sub>The embedding model is warmed before measurement; per-query raw data is committed at `bench/results/results.json`.</sub>
+
+End-to-end voice round-trip: **~1.7 s** (≈1 s Sarvam STT + ≈48 ms pipeline).
 
 ---
 
