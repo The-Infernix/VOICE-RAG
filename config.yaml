@@ -1,0 +1,94 @@
+project:
+  name: "HH Goa Voice RAG"
+
+dataset:
+  name: "ai4bharat/MSMARCO-XI"
+  split: "validation"
+  languages: ["en", "hi", "gu"]
+  max_per_lang: 10000
+
+chunking:
+  default_strategy: "passage_native"
+  strategies:
+    passage_native:
+      description: "Use dataset passages as-is (pre-chunked)"
+    fixed:
+      chunk_size: 128
+      overlap: 20
+    sliding:
+      chunk_size: 128
+      overlap: 32
+    recursive:
+      chunk_size: 128
+      overlap: 20
+    semantic:
+      threshold: 0.5
+      min_chunk_size: 20
+    metadata:
+      use_language: true
+      use_query_type: true
+
+embedding:
+  model: "intfloat/multilingual-e5-small"
+  dimension: 384
+  normalize: true
+  max_length: 512
+  device: "cpu"
+  batch_size: 2048
+
+retrieval:
+  top_k: 10
+  final_k: 5
+  search_type: "exact"
+  similarity_threshold: 0.3
+  cache_similarity_threshold: 0.95
+
+guardrails:
+  input:
+    max_query_length: 500
+    blocked_patterns:
+      - "ignore previous"
+      - "ignore above"
+      - "system prompt"
+      - "you are"
+  relevance:
+    per_language_thresholds:
+      en: 0.84
+      hi: 0.85
+      gu: 0.84
+    low_confidence_band: 0.03
+  grounding:
+    token_overlap_threshold: 0.15
+    embedding_threshold: 0.65
+
+llm:
+  provider: "openrouter"
+  model: "meta-llama/llama-3.1-8b-instruct"
+  base_url: "https://openrouter.ai/api/v1"
+  reasoning: false
+  max_tokens: 256
+  temperature: 0.1
+  timeout: 30
+  max_retries: 2
+
+generation:
+  primary: "openrouter"
+  fallback: "extractive"
+  extractive:
+    min_retrieval_score: 0.3
+    min_answer_confidence: 0.3
+
+stt:
+  provider: "sarvam"
+  sarvam:
+    model: "saaras:v3"
+    language_autodetect: true
+
+orchestrator:
+  max_retries: 2
+  timeout_ms: 2000
+  circuit_breaker_threshold: 3
+
+benchmark:
+  num_queries: 300
+  warmup_queries: 5
