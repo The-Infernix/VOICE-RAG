@@ -42,6 +42,11 @@ retrieval:
   search_type: "exact"
   similarity_threshold: 0.3
   cache_similarity_threshold: 0.95
+  budget_ms: 200
+  hybrid:
+    enabled: false
+    candidate_k: 30
+    rrf_k: 60
 
 guardrails:
   input:

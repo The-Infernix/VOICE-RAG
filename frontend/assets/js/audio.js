@@ -1,4 +1,5 @@
 const TARGET_RATE = 16000;
+const MIN_RECORD_MS = 350;
 
 export class RecorderError extends Error {
   constructor(code, message) {
@@ -16,6 +17,7 @@ export class VoiceRecorder {
     this.dataArray = null;
     this.chunks = [];
     this.active = false;
+    this.startedAt = 0;
   }
 
   async start() {
@@ -26,32 +28,23 @@ export class VoiceRecorder {
       throw new RecorderError("UNSUPPORTED", "Audio recording is not supported in this browser.");
     }
 
-    let stream;
-    try {
-      stream = await navigator.mediaDevices.getUserMedia({
-        audio: { echoCancellation: true, noiseSuppression: true },
-      });
-    } catch (err) {
-      if (err && (err.name === "NotAllowedError" || err.name === "SecurityError")) {
-        throw new RecorderError("PERMISSION_DENIED", "Microphone access was denied.");
-      }
-      if (err && err.name === "NotFoundError") {
-        throw new RecorderError("NO_MIC", "No microphone was found on this device.");
-      }
-      throw new RecorderError("MIC_FAILED", "The microphone could not be started.");
-    }
-
-    this.stream = stream;
+    const stream = await this.ensureStream();
     this.chunks = [];
+    this.startedAt = performance.now();
 
     try {
-      this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
-      const source = this.audioContext.createMediaStreamSource(stream);
-      this.analyser = this.audioContext.createAnalyser();
-      this.analyser.fftSize = 64;
-      this.analyser.smoothingTimeConstant = 0.55;
-      source.connect(this.analyser);
-      this.dataArray = new Uint8Array(this.analyser.frequencyBinCount);
+      if (!this.audioContext || this.audioContext.state === "closed") {
+        this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        const source = this.audioContext.createMediaStreamSource(stream);
+        this.analyser = this.audioContext.createAnalyser();
+        this.analyser.fftSize = 64;
+        this.analyser.smoothingTimeConstant = 0.55;
+        source.connect(this.analyser);
+        this.dataArray = new Uint8Array(this.analyser.frequencyBinCount);
+      }
+      if (this.audioContext.state === "suspended") {
+        await this.audioContext.resume().catch(() => {});
+      }
     } catch {
       this.analyser = null;
     }
@@ -65,6 +58,33 @@ export class VoiceRecorder {
     };
     this.recorder.start(120);
     this.active = true;
+  }
+
+  async ensureStream() {
+    const live = this.stream && this.stream.getAudioTracks().some((t) => t.readyState === "live");
+    if (live) return this.stream;
+    this.release();
+
+    try {
+      this.stream = await navigator.mediaDevices.getUserMedia({
+        audio: { echoCancellation: true, noiseSuppression: true },
+      });
+    } catch (err) {
+      if (err && (err.name === "NotAllowedError" || err.name === "SecurityError")) {
+        throw new RecorderError("PERMISSION_DENIED", "Microphone access was denied.");
+      }
+      if (err && err.name === "NotFoundError") {
+        throw new RecorderError("NO_MIC", "No microphone was found on this device.");
+      }
+      throw new RecorderError("MIC_FAILED", "The microphone could not be started.");
+    }
+
+    this.stream.getAudioTracks().forEach((t) => {
+      t.addEventListener("ended", () => {
+        if (this.stream && this.stream.getAudioTracks().includes(t)) this.stream = null;
+      });
+    });
+    return this.stream;
   }
 
   amplitude() {
@@ -93,16 +113,20 @@ export class VoiceRecorder {
     if (!this.active || !this.recorder) return null;
     this.active = false;
 
+    const elapsed = performance.now() - this.startedAt;
+    if (elapsed < MIN_RECORD_MS) {
+      await new Promise((r) => setTimeout(r, MIN_RECORD_MS - elapsed));
+    }
+
     const stopped = new Promise((resolve) => {
       this.recorder.onstop = resolve;
     });
     if (this.recorder.state !== "inactive") this.recorder.stop();
     await stopped;
 
-    this.teardown();
-
     const raw = new Blob(this.chunks, { type: this.recorder.mimeType || "audio/webm" });
     this.chunks = [];
+    this.recorder = null;
     if (raw.size === 0) return null;
     return blobToWav(raw);
   }
@@ -115,18 +139,26 @@ export class VoiceRecorder {
       } catch {}
     }
     this.chunks = [];
-    this.teardown();
+    this.recorder = null;
   }
 
-  teardown() {
+  release() {
+    this.active = false;
+    if (this.recorder && this.recorder.state !== "inactive") {
+      try {
+        this.recorder.stop();
+      } catch {}
+    }
+    this.recorder = null;
+    this.chunks = [];
     if (this.stream) {
       this.stream.getTracks().forEach((t) => t.stop());
       this.stream = null;
     }
-    if (this.audioContext) {
+    if (this.audioContext && this.audioContext.state !== "closed") {
       this.audioContext.close().catch(() => {});
-      this.audioContext = null;
     }
+    this.audioContext = null;
     this.analyser = null;
     this.dataArray = null;
   }
@@ -164,7 +196,14 @@ async function blobToWav(blob) {
   source.connect(offline.destination);
   source.start(0);
   const rendered = await offline.startRendering();
-  return encodeWav(rendered.getChannelData(0), TARGET_RATE);
+  const samples = rendered.getChannelData(0);
+  let sumSquares = 0;
+  for (let i = 0; i < samples.length; i++) sumSquares += samples[i] * samples[i];
+  const rms = Math.sqrt(sumSquares / samples.length);
+  if (rms < 0.0015) {
+    throw new RecorderError("NO_SIGNAL", "The microphone captured silence. Check that the correct mic is selected in Windows sound settings.");
+  }
+  return encodeWav(samples, TARGET_RATE);
 }
 
 function encodeWav(samples, sampleRate) {

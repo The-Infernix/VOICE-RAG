@@ -130,7 +130,14 @@ export function normalize(raw) {
       chunkingStrategy: raw.debug ? raw.debug.chunking_strategy : "",
       llmModel: raw.debug ? raw.debug.llm_model : "",
       indexSize: raw.debug ? raw.debug.index_size : null,
+      groundingScore: raw.debug && raw.debug.grounding_score != null ? raw.debug.grounding_score : null,
+      groundingMethod: raw.debug ? raw.debug.grounding_method || "" : "",
+      groundingDetail: raw.debug ? raw.debug.grounding_detail || "" : "",
+      topSimilarity: raw.debug && raw.debug.top_similarity != null ? raw.debug.top_similarity : null,
+      relevanceFloor: raw.debug && raw.debug.relevance_floor != null ? raw.debug.relevance_floor : null,
+      budgetMs: raw.debug && raw.debug.budget_ms != null ? raw.debug.budget_ms : 200,
     },
+    degradations: raw.debug ? raw.debug.degradations || [] : [],
   };
 }
 

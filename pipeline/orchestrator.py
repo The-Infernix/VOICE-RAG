@@ -26,6 +26,7 @@ class PipelineOrchestrator:
         generative_gen: GenerativeGenerator,
         stt: SarvamSTT,
         llm_model: str = "",
+        budget_ms: float = 200.0,
     ):
         self.retriever = retriever
         self.input_guard = input_guard
@@ -35,6 +36,7 @@ class PipelineOrchestrator:
         self.generative_gen = generative_gen
         self.stt = stt
         self.llm_model = llm_model
+        self.budget_ms = float(budget_ms)
         self._start_time = time.time()
 
     def process_text(self, request: AskRequest) -> AskResponse:
@@ -74,15 +76,17 @@ class PipelineOrchestrator:
             status="success",
         ))
 
-        # Stage 3: Retrieve
+        # Stage 3: Retrieve (deadline-aware)
         t0 = time.perf_counter()
         query_lang = request.lang or detect_query_language(request.query)
+        deadline = e2e_start + self.budget_ms / 1000.0
         retrieval = self.retriever.search(
             query=request.query,
             top_k=request.top_k,
             language_filter=request.lang,
             use_cache=request.use_cache,
             language_preference=None if request.lang else query_lang,
+            deadline=deadline,
         )
         latency.retrieve_ms = (time.perf_counter() - t0) * 1000
         stages.append(StageTrace(
@@ -94,6 +98,7 @@ class PipelineOrchestrator:
                 "cache_hit": retrieval.cache_hit,
                 "strategy": retrieval.strategy_used,
                 "query_language": query_lang,
+                "degradations": retrieval.degradations,
             },
         ))
 
@@ -102,11 +107,16 @@ class PipelineOrchestrator:
         detected_lang = query_lang
         relevance_result = self.relevance_guard.check(retrieval.chunks, detected_lang)
         latency.guard_relevance_ms = (time.perf_counter() - t0) * 1000
+        relevance_details = {"reason_code": relevance_result.reason_code}
+        if relevance_result.message:
+            relevance_details["message"] = relevance_result.message
+        if relevance_result.score is not None:
+            relevance_details["score"] = round(relevance_result.score, 4)
         stages.append(StageTrace(
             stage="guard_relevance",
             latency_ms=latency.guard_relevance_ms,
             status="pass" if relevance_result.passed else "fail",
-            details={"reason_code": relevance_result.reason_code},
+            details=relevance_details,
         ))
 
         if not relevance_result.passed:
@@ -190,12 +200,19 @@ class PipelineOrchestrator:
             debug_info = DebugInfo(
                 retrieved_context=debug_context,
                 grounding_status=grounding_status,
+                grounding_score=round(grounding_result.score, 4) if grounding_result.score is not None else 0.0,
+                grounding_method=(grounding_result.reason_code or "").replace("GROUNDED_", "").replace("UNGROUNDED_", "").lower(),
+                grounding_detail=grounding_result.message or "",
                 embedding_latency_ms=round(latency.embed_ms, 2),
                 retrieval_latency_ms=round(latency.retrieve_ms, 2),
                 generation_latency_ms=round(latency.answer_ms, 2),
                 chunking_strategy=retrieval.strategy_used,
                 index_size=self.retriever.vector_store.size(),
                 llm_model=self.llm_model,
+                top_similarity=round(retrieval.chunks[0].score, 4) if retrieval.chunks else 0.0,
+                relevance_floor=round(self.relevance_guard.floor_for(detected_lang), 4),
+                budget_ms=self.budget_ms,
+                degradations=retrieval.degradations,
             )
 
         return AskResponse(
@@ -232,18 +249,27 @@ class PipelineOrchestrator:
         t0 = time.perf_counter()
         transcript, detected_lang, stt_latency = await self.stt.transcribe(audio_bytes)
         latency.stt_ms = stt_latency
+        stt_error = getattr(self.stt, "last_error", "") or ""
+        stt_details = {"transcript": transcript[:100], "language": detected_lang}
+        if stt_error:
+            stt_details["error"] = stt_error
         stages.append(StageTrace(
             stage="stt",
             latency_ms=latency.stt_ms,
             status="success" if transcript else "fail",
-            details={"transcript": transcript[:100], "language": detected_lang},
+            details=stt_details,
         ))
 
         if not transcript:
+            refusal_reason = (
+                f"Speech recognition service error ({stt_error})"
+                if stt_error
+                else "No speech detected in the recording"
+            )
             return AskResponse(
                 status="error",
                 query="[voice]",
-                refusal_reason="Could not transcribe audio",
+                refusal_reason=refusal_reason,
                 latency=latency,
                 stages=stages,
             )

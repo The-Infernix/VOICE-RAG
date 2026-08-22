@@ -55,6 +55,13 @@ class NumpyVectorStore:
     def get_chunk(self, idx: int) -> Chunk:
         return self.chunks[idx]
 
+    def score_candidates(self, indices: List[int], query_vector: np.ndarray) -> List[Tuple[int, float]]:
+        if self.vectors is None or len(self.chunks) == 0 or not indices:
+            return []
+        idx_arr = np.array(indices, dtype=int)
+        scores = self.vectors[idx_arr] @ query_vector.flatten()
+        return [(int(i), float(s)) for i, s in zip(indices, scores)]
+
     def size(self) -> int:
         return len(self.chunks)
 

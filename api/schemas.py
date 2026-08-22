@@ -41,6 +41,7 @@ class RetrievalResult(BaseModel):
     chunks: List[Chunk]
     strategy_used: str
     cache_hit: bool = False
+    degradations: List[str] = []
 
 
 class GuardResult(BaseModel):
@@ -94,12 +95,19 @@ class RetrievedPassage(BaseModel):
 class DebugInfo(BaseModel):
     retrieved_context: List[RetrievedPassage] = []
     grounding_status: str = ""
+    grounding_score: float = 0.0
+    grounding_method: str = ""
+    grounding_detail: str = ""
     embedding_latency_ms: float = 0.0
     retrieval_latency_ms: float = 0.0
     generation_latency_ms: float = 0.0
     chunking_strategy: str = ""
     index_size: int = 0
     llm_model: str = ""
+    top_similarity: float = 0.0
+    relevance_floor: float = 0.0
+    budget_ms: float = 200.0
+    degradations: List[str] = []
 
 
 class AskResponse(BaseModel):

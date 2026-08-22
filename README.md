@@ -8,7 +8,7 @@
 
 [![Python](https://img.shields.io/badge/Python-3.12+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0096CE?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
-[![Tests](https://img.shields.io/badge/Tests-151%20passing-brightgreen?style=for-the-badge&logo=pytest)](tests/)
+[![Tests](https://img.shields.io/badge/Tests-178%20passing-brightgreen?style=for-the-badge&logo=pytest)](tests/)
 [![P50](https://img.shields.io/badge/Core%20P50-56%20ms-success?style=for-the-badge)](bench/results/summary.json)
 [![SLA](https://img.shields.io/badge/%3C200%20ms%20SLA-99.95%25%20of%202000%20queries-blue?style=for-the-badge)](bench/results/summary.json)
 [![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
@@ -58,8 +58,10 @@ Ask something the corpus *does* cover — in English, Hindi, Gujarati, or Telugu
 - **Grounded by construction** — every answer passes a grounding guard (token overlap → embedding similarity fallback); ungrounded output never reaches the user.
 - **Full transparency** — evidence drawer with ranked passages + scores, stage-by-stage latency modal, and a *why-this-answer* chain showing every guard decision.
 - **Blazing fast core** — P50 **56 ms**, P90 **69 ms**, 99.95% of queries under 200 ms across 2,000 benchmark queries.
+- **Hybrid retrieval, flag-ready** — BM25 sparse leg (bm25s) fused with dense via reciprocal rank fusion; A/B-evaluated against gold labels and shipped off by default at measured parity.
+- **Deadline-aware retrieval** — every search runs against a 200 ms budget; skipped legs surface as explicit degradation strings (`sparse_leg_skipped_deadline`, `language_rerank_skipped_deadline`) in stage traces and `debug.degradations`, never as silent timeouts.
 - **Zero-build frontend** — vanilla JS SPA served directly by FastAPI. No node_modules, no bundler.
-- **151 passing tests** — unit coverage for chunking, embedding, retrieval, guards, generation, orchestration, schemas, and language detection.
+- **178 passing tests** — unit coverage for chunking, embedding, retrieval (dense + hybrid fusion), guards, generation including the LLM citation contract, orchestration, schemas, and language detection.
 ---
 
 ## Architecture
@@ -94,7 +96,8 @@ flowchart TB
     %% =========================
     subgraph RETRIEVAL["03 · KNOWLEDGE RETRIEVAL"]
         VS["MSMARCO-XI Knowledge Base<br/>40K Passages · 384-dim Vectors"]
-        SEARCH["Semantic Vector Search<br/>NumPy Index"]
+        SEARCH["Semantic Vector Search<br/>NumPy Cosine Index"]
+        BM25["BM25 Sparse Leg<br/>bm25s · RRF candidate expansion<br/>(optional · flag-gated)"]
         RG{"Relevance Guard<br/>Language-aware Thresholds"}
     end
 
@@ -165,7 +168,7 @@ flowchart TB
     class MIC,TXT,WAV,UI client
     class STT,EMB,GEN,SEARCH process
     class IG,RG,GG guard
-    class VS knowledge
+    class VS,BM25 knowledge
     class ANS,EVID,TRACE output
     class REF1,REF2,REF3 refusal
 ```
@@ -203,10 +206,24 @@ Benchmarked on **2,000 corpus queries** (500 per language, balanced sample, seed
 Reproduce it yourself:
 
 ```bash
-python bench/run_bench.py --limit 2000   # full per-query results in bench/results/
+python bench/run_bench.py --limit 2000       # latency: full per-query results in bench/results/
+python bench/eval_retrieval.py               # quality: HitRate@10 / MRR@10 vs MSMARCO gold labels
+python bench/run_bench.py --limit 500 --hybrid --soft-lang --out bench/results/ab_hybrid   # A/B hybrid mode
 ```
 
 <sub>The embedding model is warmed before measurement; per-query raw data is committed at `bench/results/results.json`.</sub>
+
+### Retrieval quality (gold-label eval)
+
+Scored against MSMARCO's own `is_selected` relevance labels (`bench/eval_retrieval.py`, 500 balanced queries — 259 had gold passages present in the index):
+
+| Metric | Dense | Hybrid (BM25 + RRF) |
+|---|---:|---:|
+| HitRate@10 | 80.31% | 80.69% |
+| MRR@10 | 0.4664 | 0.4669 |
+| Search P50 | 16.2 ms | 16.9 ms |
+
+Hybrid is measured **parity** here (+0.4 pp hit rate for ~1 ms), so dense-only stays the default and the sparse leg ships flag-ready behind `retrieval.hybrid.enabled` in `config.yaml`. RRF is used for candidate-pool expansion only; final ordering is always by cosine similarity, which keeps retrieval scores calibrated with the relevance floors.
 
 End-to-end voice round-trip: **~1.7 s** (≈1 s Sarvam STT + ≈56 ms pipeline).
 
@@ -253,6 +270,8 @@ uvicorn api.main:app --host 0.0.0.0 --port 7860
 Open **http://localhost:7860** — the SPA is served at the root.
 
 > The prebuilt index (`index/artifacts/`, 40k × 384-dim vectors) ships with the repo, so first run needs no indexing step. To rebuild from scratch: `python index/build_corpus.py` then `python index/build_index.py`. To add another language from MSMARCO-XI, `index/extend_corpus_te.py` is a working template.
+>
+> Optional: enable hybrid retrieval by setting `retrieval.hybrid.enabled: true` in `config.yaml` — the prebuilt BM25 artifacts ship in `index/artifacts/bm25/` (rebuild with `python index/build_sparse.py`).
 
 ---
 
@@ -315,6 +334,8 @@ curl -X POST http://localhost:7860/api/v1/voice/query \
 
 Accepts WAV audio (16 kHz mono recommended). Returns the same envelope as `/api/v1/query`, plus the transcript in `query` and detected language.
 
+With `debug: true`, responses additionally carry `debug.degradations` (e.g. `sparse_leg_skipped_deadline`, `language_rerank_skipped_deadline`, `sparse_leg_unavailable`) plus budget status — every graceful skip inside the 200 ms retrieval budget is reported, never swallowed.
+
 ### `GET /health`
 
 ```json
@@ -352,6 +373,9 @@ Q: How much does an Xbox 360 cost?       → answered ($80–$250, conf 0.933)
 ### 3. Grounding Guard
 Answers must be traceable to retrieved text: token-overlap ≥ 0.231 passes instantly; otherwise an embedding-similarity check (≥ 0.794) runs. Ungrounded generations are replaced with the extractive answer or refused outright.
 
+### 4. Citation Contract (LLM mode)
+When `allow_generative=true`, the LLM must return strict JSON `{answer, citations[], confidence}` citing only supplied passages; malformed output gets exactly one retry. Invented or out-of-range citations are dropped, and if none survive, the pipeline falls back to extractive answering — an ungrounded generation can never reach the user.
+
 ---
 
 ## Multilingual Pipeline
@@ -379,7 +403,7 @@ A dependency-free vanilla JS single-page app (served by FastAPI itself):
 - **Latency modal** — per-stage timing bars straight from the API's stage traces
 - **Why-this-answer** — the guard decision chain for the current response
 - **History** — recent Q&A persisted in `localStorage`
-- **Technical mode** — toggle raw debug payloads for demos and grading
+- **Technical panel** — grouped RETRIEVAL / PIPELINE / CHUNKS / GENERATION sections with top-score vs. relevance floor, guard decision chain, retrieval strategy, cache state, a Budget WITHIN/OVER banner against the 200 ms target, and any degradation flags
 
 ---
 
@@ -395,7 +419,9 @@ VOICE-RAG/
 ├── retrieval/
 │   ├── embedder.py          # E5 wrapper (+ embedding cache)
 │   ├── vector_store.py      # NumPy index + semantic cache
-│   ├── search.py            # Retriever: search, rerank, caching
+│   ├── search.py            # Retriever: dense/hybrid search, rerank, caching
+│   ├── sparse.py            # BM25 sparse index (bm25s)
+│   ├── fusion.py            # Reciprocal rank fusion
 │   └── lang_detect.py       # Script-based language detection
 ├── guardrails/
 │   ├── input_guard.py       # Injection / safety / validation
@@ -411,11 +437,12 @@ VOICE-RAG/
 ├── index/
 │   ├── build_corpus.py      # MSMARCO-XI → corpus.jsonl
 │   ├── build_index.py       # Embed + persist artifacts
+│   ├── build_sparse.py      # BM25 artifact builder (index/artifacts/bm25/)
 │   ├── extend_corpus_te.py  # Incremental language-extension template
-│   └── artifacts/           # Prebuilt: chunks.json, vectors.npy, stats.json
+│   └── artifacts/           # Prebuilt: chunks.json, vectors.npy, bm25/, stats.json
 ├── frontend/                # Zero-build SPA (HTML/CSS/JS)
-├── bench/                   # Latency harness + results
-├── tests/                   # 151 pytest cases
+├── bench/                   # Latency harness, gold-label eval, results
+├── tests/                   # 178 pytest cases
 └── config.yaml              # Models, thresholds, tuning
 ```
 
@@ -428,10 +455,10 @@ pytest tests/ -q
 ```
 
 ```
-151 passed
+178 passed
 ```
 
-Covers chunking, embedding math, vector-store sorting, cache isolation, all three guards (pass/refuse/edge cases), extractive + generative generation, orchestrator flows including refusal paths, schema validation, and language detection.
+Covers chunking, embedding math, vector-store sorting, cache isolation, all three guards (pass/refuse/edge cases), extractive + generative generation including the strict citation contract (`_parse_answer_json`), orchestrator flows including refusal paths, schema validation, language detection — plus 27 hybrid-retrieval cases in `tests/test_hybrid.py` (BM25 build/save/load round-trips, RRF fusion math, tokenization incl. Indic matras, deadline-skip degradation, dense-fallback paths).
 
 ---
 
@@ -452,11 +479,11 @@ Honesty is a feature. Current boundaries:
 |---|---|
 | API | FastAPI, Uvicorn, Pydantic v2 |
 | Embeddings | `intfloat/multilingual-e5-small` (384-dim) |
-| Vector store | NumPy cosine index + semantic query cache |
+| Vector store | NumPy cosine index + semantic query cache (+ optional BM25 sparse leg via `bm25s`) |
 | Speech | Sarvam AI `saaras:v3` |
 | LLM (opt-in) | OpenRouter chat completions |
 | Frontend | Vanilla JS, Canvas API, Web Audio/MediaRecorder |
-| Testing | Pytest (149 cases) |
+| Testing | Pytest (178 cases) |
 
 ---
 

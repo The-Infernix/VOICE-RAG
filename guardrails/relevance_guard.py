@@ -13,6 +13,9 @@ class RelevanceGuard:
         self.default_threshold = 0.85
         self.low_confidence_band = config.get("low_confidence_band", 0.03)
 
+    def floor_for(self, lang: str) -> float:
+        return self.thresholds.get(lang, self.default_threshold)
+
     def check(self, chunks: List[Chunk], lang: str = "en") -> GuardResult:
         if not chunks:
             return GuardResult(

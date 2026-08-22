@@ -53,7 +53,20 @@ async def lifespan(app: FastAPI):
         print("WARNING: No pre-built index found. Run index/build_index.py first.")
         vector_store = NumpyVectorStore()
 
-    retriever = Retriever(embedder, vector_store)
+    retrieval_cfg = config.get("retrieval", {}) or {}
+    hybrid_cfg = retrieval_cfg.get("hybrid", {}) or {}
+    sparse_index = None
+    if hybrid_cfg.get("enabled"):
+        from retrieval.sparse import Bm25SparseIndex
+        sparse_index = Bm25SparseIndex()
+        bm25_dir = str(ARTIFACTS_DIR / "bm25")
+        if sparse_index.load(bm25_dir):
+            print(f"BM25 sparse index loaded ({sparse_index.num_docs} docs).")
+        else:
+            print("WARNING: hybrid retrieval enabled but no BM25 index found. Run index/build_sparse.py.")
+            sparse_index = None
+
+    retriever = Retriever(embedder, vector_store, sparse_index=sparse_index, hybrid_config=hybrid_cfg)
 
     input_guard = InputGuard(config["guardrails"]["input"])
     relevance_guard = RelevanceGuard(config["guardrails"]["relevance"])
@@ -78,6 +91,7 @@ async def lifespan(app: FastAPI):
         generative_gen=generative_gen,
         stt=stt,
         llm_model=llm_config.get("model", ""),
+        budget_ms=float(retrieval_cfg.get("budget_ms", 200)),
     )
 
     print("Orchestrator ready.")
@@ -146,9 +160,17 @@ async def health():
 
 from fastapi.staticfiles import StaticFiles
 
+
+class NoCacheStaticFiles(StaticFiles):
+    def file_response(self, *args, **kwargs):
+        response = super().file_response(*args, **kwargs)
+        response.headers["Cache-Control"] = "no-cache"
+        return response
+
+
 FRONTEND_DIR = Path(__file__).parent.parent / "frontend"
 if FRONTEND_DIR.exists():
-    app.mount("/", StaticFiles(directory=str(FRONTEND_DIR), html=True), name="frontend")
+    app.mount("/", NoCacheStaticFiles(directory=str(FRONTEND_DIR), html=True), name="frontend")
 
 
 if __name__ == "__main__":

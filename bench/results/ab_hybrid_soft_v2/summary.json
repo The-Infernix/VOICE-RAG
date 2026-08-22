@@ -1,0 +1,70 @@
+{
+  "mode": "hybrid-soft-lang",
+  "queries_tested": 500,
+  "core_pipeline": {
+    "p50_ms": 33.13,
+    "p70_ms": 35.12,
+    "p90_ms": 39.49,
+    "p95_ms": 41.72,
+    "p100_ms": 67.7,
+    "mean_ms": 33.77,
+    "std_ms": 4.58
+  },
+  "total_e2e": {
+    "p50_ms": 33.17,
+    "p70_ms": 35.18,
+    "p100_ms": 67.77,
+    "mean_ms": 33.82
+  },
+  "component_breakdown": {
+    "embed_p50_ms": 14.62,
+    "retrieve_p50_ms": 18.2,
+    "answer_p50_ms": 0.06,
+    "guard_input_p50_ms": 0.01,
+    "guard_relevance_p50_ms": 0.01,
+    "guard_grounding_p50_ms": 0.13
+  },
+  "within_200ms": "100.0%",
+  "by_language": {
+    "en": {
+      "count": 125,
+      "p50_ms": 31.97,
+      "p70_ms": 33.32,
+      "p100_ms": 67.7,
+      "mean_ms": 32.75,
+      "within_200ms": "100.0%"
+    },
+    "hi": {
+      "count": 125,
+      "p50_ms": 33.02,
+      "p70_ms": 35.11,
+      "p100_ms": 48.3,
+      "mean_ms": 33.7,
+      "within_200ms": "100.0%"
+    },
+    "gu": {
+      "count": 125,
+      "p50_ms": 34.41,
+      "p70_ms": 36.37,
+      "p100_ms": 49.21,
+      "mean_ms": 34.8,
+      "within_200ms": "100.0%"
+    },
+    "te": {
+      "count": 125,
+      "p50_ms": 33.45,
+      "p70_ms": 35.43,
+      "p100_ms": 45.36,
+      "mean_ms": 33.81,
+      "within_200ms": "100.0%"
+    }
+  },
+  "by_status": {
+    "success": 466,
+    "refused": 34
+  },
+  "by_method": {
+    "extractive": 466,
+    "none": 34
+  }
+}

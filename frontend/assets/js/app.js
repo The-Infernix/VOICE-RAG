@@ -25,6 +25,7 @@ const els = {
   scrim: $("scrim"),
   toasts: $("toasts"),
   srLive: $("srLive"),
+  resultBadge: $("resultBadge"),
 };
 
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -34,8 +35,17 @@ const recorder = new VoiceRecorder();
 let state = "boot";
 let typeToken = 0;
 let recording = false;
+let indexSize = 0;
+let lastResult = null;
 
-const LANG_NAMES = { en: "English", hi: "Hindi", gu: "Gujarati" };
+const LANG_NAMES = { en: "English", hi: "Hindi", gu: "Gujarati", te: "Telugu" };
+const LANG_NATIVE = { hi: "हिन्दी", gu: "ગુજરાતી", te: "తెలుగు" };
+
+function langLabel(code) {
+  const en = LANG_NAMES[code];
+  if (!en) return "";
+  return LANG_NATIVE[code] ? `${en} · ${LANG_NATIVE[code]}` : en;
+}
 
 function esc(s) {
   return String(s ?? "").replace(/[&<>"']/g, (c) => ({
@@ -49,6 +59,16 @@ function delay(ms) {
 
 function announce(msg) {
   els.srLive.textContent = msg;
+}
+
+function setResultBadge(text, ok = true) {
+  if (!text || !els.resultBadge) {
+    if (els.resultBadge) els.resultBadge.hidden = true;
+    return;
+  }
+  els.resultBadge.className = "result-badge " + (ok ? "ok" : "bad");
+  els.resultBadge.innerHTML = `<i></i>${esc(text)}`;
+  els.resultBadge.hidden = false;
 }
 
 function setState(next) {
@@ -105,6 +125,7 @@ function renderIdle() {
   closeModal();
   setState("idle");
   setOrbMode("idle");
+  setResultBadge(null);
   els.viewTop.innerHTML = `
     <h1 class="headline">Ask.<br><em>We&rsquo;ll find <span class="hl">the evidence.</span></em></h1>
     <p class="tagline">Speak naturally. Every answer traces back to the passages it came from.</p>
@@ -159,13 +180,16 @@ function renderRetrieving() {
   setState("retrieving");
   setOrbMode("retrieving");
   els.viewTop.innerHTML = `<div class="proc-label">Searching knowledge</div>`;
-  els.viewBottom.innerHTML = "";
+  els.viewBottom.innerHTML = `
+    <p class="proc-sub">${indexSize ? `Searching <b>${indexSize.toLocaleString()}</b> passages across the knowledge base…` : "Searching the knowledge base…"}</p>
+  `;
   announce("Searching knowledge");
 }
 
-function renderFound(n) {
+function renderFound(n, lang) {
+  const langTag = lang && langLabel(lang) ? ` · <b>${esc(langLabel(lang))}</b>` : "";
   els.viewTop.innerHTML = `
-    <div class="proc-found">Found <b>${n}</b> relevant passage${n === 1 ? "" : "s"}</div>
+    <div class="proc-found">Found <b>${n}</b> relevant passage${n === 1 ? "" : "s"}${langTag}</div>
   `;
   announce(`Found ${n} relevant passages`);
 }
@@ -173,6 +197,7 @@ function renderFound(n) {
 /* ---------- result presentation ---------- */
 
 function presentResult(result, { silentHistory = false } = {}) {
+  lastResult = result;
   if (!silentHistory && result.kind === "answer") {
     addHistory({
       id: result.requestId + ":" + Date.now(),
@@ -216,12 +241,6 @@ function renderAnswer(r) {
           <summary>Live pipeline <span class="sum-right">${r.stages.length} stages</span></summary>
           <div class="panel-body">${pipelineTimeline(r)}</div>
         </details>
-        <div class="tech-only">
-          <details class="panel">
-            <summary>Technical detail <span class="sum-right">${esc(r.requestId)}</span></summary>
-            <div class="panel-body">${techGrid(r)}</div>
-          </details>
-        </div>
         <div style="text-align:center;margin-top:10px;">
           <button class="btn-primary" data-action="again">Ask another question</button>
         </div>
@@ -230,6 +249,10 @@ function renderAnswer(r) {
   `;
 
   wireAnswerActions(r);
+  setResultBadge(
+    `${r.grounded === false ? "UNGROUNDED" : "GROUNDED"} · ${Math.round(r.latency.core)}ms`,
+    r.grounded !== false
+  );
   announce(`Answer ready in ${Math.round(r.latency.core)} milliseconds.`);
 }
 
@@ -269,24 +292,10 @@ function pipelineTimeline(r) {
   return `<div class="timeline">${rows}</div>`;
 }
 
-function techGrid(r) {
-  const lang = LANG_NAMES[r.language] || r.language || "—";
-  const cells = [
-    ["Request ID", r.requestId],
-    ["Chunk strategy", r.tech.chunkingStrategy || "—"],
-    ["LLM model", r.tech.llmModel || "extractive only"],
-    ["Index size", r.tech.indexSize != null ? r.tech.indexSize.toLocaleString() + " passages" : "—"],
-    ["Detected language", lang],
-    ["Method", r.method ? `${r.method}${r.confidence != null ? " · " + r.confidence.toFixed(2) : ""}` : "—"],
-  ];
-  return `<div class="tech-grid">${cells.map(([k, v]) => `
-    <div class="tech-cell"><span class="micro">${esc(k)}</span><div>${esc(v)}</div></div>
-  `).join("")}</div>`;
-}
-
 function renderRefused(r) {
   setState("refused");
   setOrbMode("off");
+  setResultBadge("REFUSED", false);
   els.viewMain.innerHTML = `
     <div class="end-state bad">
       <div class="end-icon">
@@ -305,6 +314,7 @@ function renderRefused(r) {
 function renderNoEvidence(r) {
   setState("no_evidence");
   setOrbMode("off");
+  setResultBadge("NO EVIDENCE", false);
   els.viewMain.innerHTML = `
     <div class="end-state ok">
       <div class="end-icon">
@@ -331,13 +341,20 @@ function renderErrorView(r) {
   const isStt = !r.transcript && (!r.passages || r.passages.length === 0);
   let title, msg;
   if (isStt) {
-    title = "Transcription failed";
-    msg = "We couldn't make out any speech in that recording. Try holding the orb a moment longer and speaking clearly.";
+    const svcFail = /service error|missing SARVAM_API_KEY/i.test(r.refusalReason || "");
+    if (svcFail) {
+      title = "Speech recognition unavailable";
+      msg = "The speech-to-text service failed or is rate-limited. Check the backend logs and your Sarvam API key, then try again.";
+    } else {
+      title = "Transcription failed";
+      msg = "We couldn't make out any speech in that recording. Try holding the orb a moment longer and speaking clearly.";
+    }
   } else {
     [title, msg] = ERROR_COPY.SERVER_ERROR;
   }
   setState("error");
   setOrbMode("off");
+  setResultBadge("ERROR", false);
   els.viewMain.innerHTML = `
     <div class="end-state bad">
       <div class="end-icon">
@@ -357,6 +374,7 @@ function renderApiError(err) {
   const copy = ERROR_COPY[err instanceof ApiError ? err.code : "SERVER_ERROR"] || ERROR_COPY.SERVER_ERROR;
   setState("error");
   setOrbMode("off");
+  setResultBadge("ERROR", false);
   els.viewMain.innerHTML = `
     <div class="end-state bad">
       <div class="end-icon">
@@ -410,7 +428,7 @@ async function retrievePhase(result) {
   const n = result.passages.length;
   engine.foundCount = Math.max(1, Math.min(n, 5));
   setOrbMode("found");
-  renderFound(n);
+  renderFound(n, result.language);
   await delay(reducedMotion ? 150 : 850);
   presentResult(result);
 }
@@ -450,7 +468,15 @@ async function stopRecording() {
   if (!recording) return;
   recording = false;
   els.orbButton.setAttribute("aria-pressed", "false");
-  const wav = await recorder.stop();
+  let wav;
+  try {
+    wav = await recorder.stop();
+  } catch (err) {
+    if (err instanceof RecorderError) toast(err.message);
+    else toast("The recording could not be processed");
+    renderIdle();
+    return;
+  }
   if (!wav) {
     toast("Nothing was recorded — try again");
     renderIdle();
@@ -507,9 +533,9 @@ function closeDrawers() {
   lastFocus = null;
 }
 
-function openModal(html) {
+function openModal(html, extraClass = "") {
   lastFocus = document.activeElement;
-  els.modalRoot.innerHTML = `<div class="modal-card" role="dialog" aria-modal="true">${html}</div>`;
+  els.modalRoot.innerHTML = `<div class="modal-card ${extraClass}" role="dialog" aria-modal="true">${html}</div>`;
   els.modalRoot.classList.add("open");
   els.modalRoot.setAttribute("aria-hidden", "false");
   openScrim();
@@ -545,7 +571,6 @@ function openEvidenceDrawer(r) {
       <div class="ev-meta">
         <span>${esc(p.source)}</span>
         ${p.language ? `<span>${esc(LANG_NAMES[p.language] || p.language)}</span>` : ""}
-        <span class="tech-only">${esc(p.chunkId)}</span>
       </div>
     </article>
   `).join("");
@@ -655,6 +680,102 @@ function openWhyModal(r) {
   els.modalRoot.querySelector(".drawer-close").addEventListener("click", closeModal);
 }
 
+function openTechPanel(r) {
+  const stageRows = r.stages.map((s) => `
+    <div class="tx-row">
+      <span class="tx-mark ${s.status === "fail" ? "bad" : "ok"}">${s.status === "fail" ? "&#10005;" : "&#10003;"}</span>
+      <span class="tx-name">${esc(s.label)}</span>
+      <span class="tx-ms">${s.ms.toFixed(1)} ms</span>
+    </div>
+  `).join("");
+
+  const retrieveStage = r.stages.find((s) => s.key === "retrieve");
+  const relevanceStage = r.stages.find((s) => s.key === "guard_relevance");
+  const rd = (retrieveStage && retrieveStage.details) || {};
+  const gd = (relevanceStage && relevanceStage.details) || {};
+  const degradations = r.degradations || [];
+
+  const retrievalRows = [
+    ["Top similarity", r.tech.topSimilarity != null ? r.tech.topSimilarity.toFixed(3) : null],
+    ["Relevance floor", r.tech.relevanceFloor != null ? r.tech.relevanceFloor.toFixed(3) : null],
+    ["Decision", gd.message || gd.reason_code || (relevanceStage ? "PASS" : null)],
+    ["Strategy", rd.strategy],
+    ["Cache", rd.cache_hit == null ? null : (rd.cache_hit ? "HIT" : "MISS")],
+    ["Query language", rd.query_language ? langLabel(rd.query_language) : null],
+    ["Degradations", degradations.length ? degradations.join("; ") : "NONE"],
+  ].filter(([, v]) => v !== null && v !== undefined && v !== "").map(([k, v]) => `
+    <div class="tx-row">
+      <span class="tx-name">${esc(k)}</span>
+      <span class="tx-val ${k === "Degradations" ? (degradations.length ? "warn-text" : "ok-text") : ""}">${esc(String(v))}</span>
+    </div>
+  `).join("");
+
+  const chunkRows = r.passages.length
+    ? r.passages.map((p) => `
+        <div class="tx-row">
+          <span class="tx-name mono">${esc(p.chunkId || "—")}</span>
+          <span class="tx-ms">${p.score.toFixed(3)}</span>
+        </div>
+      `).join("")
+    : '<div class="tx-empty">No chunks were recorded for this response.</div>';
+
+  const generationRows = [
+    ["Method", r.method ? r.method.toUpperCase() : null],
+    ["Confidence", r.confidence != null ? r.confidence.toFixed(3) : null],
+    ["LLM model", r.tech.llmModel || "extractive only"],
+    ["Generation time", `${r.latency.generation.toFixed(1)} ms`],
+  ].filter(([, v]) => v !== null && v !== undefined).map(([k, v]) => `
+    <div class="tx-row"><span class="tx-name">${esc(k)}</span><span class="tx-val">${esc(String(v))}</span></div>
+  `).join("");
+
+  const gOk = r.grounded !== false;
+  const t = r.tech || {};
+  const cells = [
+    ["Request ID", r.requestId],
+    ["Detected language", langLabel(r.language)],
+    ["Chunk strategy", t.chunkingStrategy],
+    ["Index size", t.indexSize != null ? t.indexSize.toLocaleString() + " passages" : ""],
+  ];
+  const grid = cells.map(([k, v]) => `
+    <div class="tx-cell"><span class="micro">${esc(k)}</span><div>${esc(v || "—")}</div></div>
+  `).join("");
+
+  const groundingRows = [
+    ["Status", gOk ? "GROUNDED" : "UNGROUNDED"],
+    ["Score", t.groundingScore != null ? t.groundingScore.toFixed(3) : "—"],
+    ["Method", t.groundingMethod || "—"],
+    ["Detail", t.groundingDetail || "—"],
+  ].map(([k, v]) => `
+    <div class="tx-row">
+      <span class="tx-name">${esc(k)}</span>
+      <span class="tx-val ${k === "Status" ? (gOk ? "ok-text" : "bad-text") : ""}">${esc(String(v))}</span>
+    </div>
+  `).join("");
+
+  openModal(`
+    <div class="modal-head">
+      <h2>Technical mode</h2>
+      <button class="drawer-close" aria-label="Close technical panel">
+        <svg viewBox="0 0 14 14" width="13" height="13"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div class="tx-scroll">
+      <section class="tx-section"><h3 class="tx-label">Request</h3><div class="tx-grid">${grid}</div></section>
+      <section class="tx-section"><h3 class="tx-label">Retrieval</h3>${retrievalRows}</section>
+      <section class="tx-section"><h3 class="tx-label">Pipeline</h3>${stageRows}
+        <div class="tx-row tx-budget">
+          <span class="tx-name">Budget</span>
+          <span class="tx-ms">${(t.budgetMs ?? 200).toFixed(0)} ms &middot; core ${r.latency.core.toFixed(1)} ms ${r.latency.core <= (t.budgetMs ?? 200) ? '<span class="ok-text">WITHIN</span>' : '<span class="warn-text">OVER</span>'}</span>
+        </div>
+      </section>
+      <section class="tx-section"><h3 class="tx-label">Retrieved chunks</h3>${chunkRows}</section>
+      <section class="tx-section"><h3 class="tx-label">Generation</h3>${generationRows}</section>
+      <section class="tx-section"><h3 class="tx-label">Grounding</h3>${groundingRows}</section>
+    </div>
+  `, "wide");
+  els.modalRoot.querySelector(".drawer-close").addEventListener("click", closeModal);
+}
+
 function openHistory() {
   const items = loadHistory();
   const list = items.length
@@ -743,28 +864,19 @@ els.scrim.addEventListener("click", () => {
 els.historyBtn.addEventListener("click", openHistory);
 
 els.techToggle.addEventListener("click", () => {
-  const on = document.body.classList.toggle("tech");
-  els.techToggle.setAttribute("aria-pressed", String(on));
-  try {
-    localStorage.setItem("voicerag.tech", on ? "1" : "0");
-  } catch {}
-});
-
-if ((() => {
-  try {
-    return localStorage.getItem("voicerag.tech") === "1";
-  } catch {
-    return false;
+  if (!lastResult) {
+    toast("Ask a question first — technical mode shows the trace of your last query");
+    return;
   }
-})()) {
-  document.body.classList.add("tech");
-  els.techToggle.setAttribute("aria-pressed", "true");
-}
+  openTechPanel(lastResult);
+});
 
 document.addEventListener("visibilitychange", () => {
   if (document.hidden) engine.stop();
   else if (["idle", "listening", "understanding", "retrieving", "found"].includes(state)) engine.start();
 });
+
+window.addEventListener("pagehide", () => recorder.release());
 
 async function checkHealth() {
   try {
@@ -772,6 +884,7 @@ async function checkHealth() {
     els.sysStatus.classList.remove("offline");
     els.sysStatusText.textContent = "ONLINE";
     if (h.index_size) {
+      indexSize = h.index_size;
       els.kbPassages.textContent = `${h.index_size.toLocaleString()} passages indexed`;
     }
   } catch {

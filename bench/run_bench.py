@@ -42,6 +42,8 @@ def run_benchmark(
     orchestrator: PipelineOrchestrator,
     queries: List[Dict],
     output_dir: str = None,
+    soft_lang: bool = False,
+    hybrid: bool = False,
 ) -> Dict:
     if output_dir is None:
         output_dir = Path(__file__).parent / "results"
@@ -53,7 +55,7 @@ def run_benchmark(
         query_text = q["query"][:500]
         request = AskRequest(
             query=query_text,
-            lang=q.get("language"),
+            lang=None if soft_lang else q.get("language"),
             top_k=10,
             allow_generative=False,
         )
@@ -94,6 +96,7 @@ def run_benchmark(
         return round(float(np.percentile(arr, p)), 2) if arr else 0
 
     summary = {
+        "mode": ("hybrid" if hybrid else "dense") + ("-soft-lang" if soft_lang else "-hard-lang"),
         "queries_tested": len(results),
         "core_pipeline": {
             "p50_ms": pct(core_lats, 50),
@@ -143,7 +146,7 @@ def run_benchmark(
         json.dump(summary, f, indent=2, ensure_ascii=False)
 
     print("\n" + "=" * 60)
-    print("HH GOA RAG BENCHMARK")
+    print(f"HH GOA RAG BENCHMARK [{summary['mode']}]")
     print("=" * 60)
     print(f"\nQueries: {summary['queries_tested']}")
     print(f"\n--- Core Pipeline Latency ---")
@@ -192,7 +195,29 @@ if __name__ == "__main__":
     embedder.embed_query("warmup")  # exclude one-time model load from measurements
     vector_store = NumpyVectorStore()
     vector_store.load(str(ARTIFACTS))
-    retriever = Retriever(embedder, vector_store)
+
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--limit", type=int, default=1500)
+    parser.add_argument("--balanced", action="store_true", default=True)
+    parser.add_argument("--sequential", action="store_true")
+    parser.add_argument("--hybrid", action="store_true")
+    parser.add_argument("--soft-lang", action="store_true")
+    parser.add_argument("--out", type=str, default=None)
+    args = parser.parse_args()
+
+    if args.hybrid:
+        from retrieval.sparse import Bm25SparseIndex
+        sparse_index = Bm25SparseIndex()
+        if not sparse_index.load(str(ARTIFACTS / "bm25")):
+            print("ERROR: BM25 index not found at index/artifacts/bm25; run index/build_sparse.py first.")
+            sys.exit(1)
+        hybrid_cfg = dict(CONFIG["retrieval"].get("hybrid", {}))
+        hybrid_cfg["enabled"] = True
+        retriever = Retriever(embedder, vector_store, sparse_index=sparse_index, hybrid_config=hybrid_cfg)
+        print(f"Hybrid mode: BM25 loaded ({sparse_index.num_docs} docs), candidate_k={hybrid_cfg.get('candidate_k', 30)}, rrf_k={hybrid_cfg.get('rrf_k', 60)}")
+    else:
+        retriever = Retriever(embedder, vector_store)
 
     llm_config = CONFIG.get("llm", {})
 
@@ -212,14 +237,13 @@ if __name__ == "__main__":
         llm_model=llm_config.get("model", ""),
     )
 
-    import argparse
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--limit", type=int, default=1500)
-    parser.add_argument("--balanced", action="store_true", default=True)
-    parser.add_argument("--sequential", action="store_true")
-    args = parser.parse_args()
-
     queries = load_test_queries(limit=args.limit, balanced=not args.sequential)
     lang_counts = Counter(q.get("language", "?") for q in queries)
-    print(f"Running benchmark on {len(queries)} queries: {dict(lang_counts)}")
-    run_benchmark(orchestrator, queries)
+    modes = []
+    if args.hybrid:
+        modes.append("hybrid")
+    if args.soft_lang:
+        modes.append("soft-lang")
+    mode_tag = "+".join(modes) if modes else "dense-hard"
+    print(f"Running benchmark [{mode_tag}] on {len(queries)} queries: {dict(lang_counts)}")
+    run_benchmark(orchestrator, queries, output_dir=args.out, soft_lang=args.soft_lang, hybrid=args.hybrid)
